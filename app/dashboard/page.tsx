@@ -1,15 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { Flame, Trophy, Leaf, Zap, ChevronRight, History, Search } from "lucide-react";
 import Link from "next/link";
 
 export default function Dashboard() {
+  const [dosha, setDosha] = useState("Pitta");
+
+  useEffect(() => {
+    const savedDosha = localStorage.getItem("aaharai_dosha");
+    if (savedDosha) {
+      setDosha(savedDosha);
+    }
+  }, []);
+
   // Mock data for the dashboard - In production, this comes from Prisma/Database
   const stats = {
     currentStreak: 5,
     totalPoints: 1250,
-    dosha: "Pitta",
+    dosha: dosha,
     nextMilestone: 7,
   };
 

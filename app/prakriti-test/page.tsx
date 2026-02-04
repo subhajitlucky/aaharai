@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Check, RefreshCcw } from "lucide-react";
 import Link from "next/link";
@@ -76,6 +76,14 @@ export default function PrakritiTest() {
   const [loading, setLoading] = useState(false);
   const [mealPlan, setMealPlan] = useState<any>(null);
 
+  // Load result from localStorage on mount
+  useEffect(() => {
+    const savedResult = localStorage.getItem("aaharai_dosha");
+    if (savedResult) {
+      setResult(savedResult);
+    }
+  }, []);
+
   const handleSelect = (dosha: "Vata" | "Pitta" | "Kapha") => {
     setAnswers((prev) => ({ ...prev, [questions[currentStep].id]: dosha }));
   };
@@ -98,6 +106,7 @@ export default function PrakritiTest() {
     )[0];
     
     setResult(dominant);
+    localStorage.setItem("aaharai_dosha", dominant);
   };
 
   const fetchMealPlan = async () => {
@@ -234,6 +243,7 @@ export default function PrakritiTest() {
                     setCurrentStep(0);
                     setAnswers({});
                     setMealPlan(null);
+                    localStorage.removeItem("aaharai_dosha");
                   }}
                   className="flex items-center justify-center gap-2 px-6 py-4 rounded-full font-medium text-charcoal border border-charcoal/20 hover:bg-charcoal/5"
                  >
@@ -265,6 +275,7 @@ export default function PrakritiTest() {
                     setCurrentStep(0);
                     setAnswers({});
                     setMealPlan(null);
+                    localStorage.removeItem("aaharai_dosha");
                   }}
                   className="w-full mt-6 py-4 rounded-full font-medium text-charcoal border border-charcoal/20 hover:bg-charcoal/5"
                  >
