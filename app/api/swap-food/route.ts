@@ -6,9 +6,11 @@ const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
 export async function POST(request: Request) {
   try {
-    const { craving } = await request.json();
+    const { craving, dosha } = await request.json();
     
     if (!craving) return NextResponse.json({ error: "Craving is required" }, { status: 400 });
+
+    const doshaContext = dosha ? `Specifically for a person with a ${dosha} Prakriti.` : "";
 
     if (!OPENROUTER_API_KEY) {
       return NextResponse.json({ 
@@ -23,14 +25,19 @@ export async function POST(request: Request) {
     }
 
     const prompt = `
-      The user craves: "${craving}".
-      Suggest a Healthy, Ancient Indian (Satvik/Ayurvedic) alternative that mimics the texture/flavor.
+      The user craves: "${craving}". ${doshaContext}
+      Suggest a Healthy, Ancient Indian (Satvik/Ayurvedic) alternative that mimics the texture or flavor profile of this craving.
       
+      Requirements:
+      1. Mimic the psychological need (e.g. crunch for chips, sweetness for soda).
+      2. If a Dosha is provided, ensure the choice is balancing (e.g. for Pitta, avoid heavy heat).
+      3. Use traditional ingredients like Jowar, Ragi, Amla, Kokum, etc.
+
       Format (JSON ONLY):
       {
         "name": "Creative Name",
         "description": "Mouth-watering description (1 sentence)",
-        "why": "Why it satisfies the craving",
+        "why": "Why it satisfies the craving and how it aligns with the ${dosha || 'Ayurvedic'} diet",
         "ingredients": ["Item 1", "Item 2", "Item 3"]
       }
     `;
@@ -46,7 +53,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         "model": "google/gemini-2.0-flash-lite-preview-02-05:free",
         "messages": [
-          {"role": "system", "content": "You are a creative Ayurvedic chef. JSON only."},
+          {"role": "system", "content": "You are a creative Ayurvedic chef and nutritionist. JSON only."},
           {"role": "user", "content": prompt}
         ]
       })

@@ -1,14 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Sparkles, ArrowRight, Utensils } from "lucide-react";
+import { Search, Sparkles, ArrowRight, Utensils, Bookmark, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 export default function SwapperPage() {
   const [query, setQuery] = useState("");
+  const [dosha, setDosha] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
+  const [isSaved, setIsSaved] = useState(false);
+
+  // Load dosha from localStorage
+  useEffect(() => {
+    const savedDosha = localStorage.getItem("aaharai_dosha");
+    if (savedDosha) setDosha(savedDosha);
+  }, []);
 
   const handleSwap = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,11 +24,12 @@ export default function SwapperPage() {
 
     setLoading(true);
     setResult(null);
+    setIsSaved(false);
 
     try {
       const res = await fetch("/api/swap-food", {
         method: "POST",
-        body: JSON.stringify({ craving: query }),
+        body: JSON.stringify({ craving: query, dosha }),
       });
       const data = await res.json();
       setResult(data.swap);
@@ -29,6 +38,16 @@ export default function SwapperPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const saveToLibrary = () => {
+    if (!result) return;
+    const existing = localStorage.getItem("aaharai_swaps") || "[]";
+    const swaps = JSON.parse(existing);
+    swaps.unshift({ ...result, craving: query, date: new Date().toISOString() });
+    localStorage.setItem("aaharai_swaps", JSON.stringify(swaps.slice(0, 20)));
+    setIsSaved(true);
+    setTimeout(() => setIsSaved(false), 2000);
   };
 
   return (
@@ -92,9 +111,16 @@ export default function SwapperPage() {
                 <Utensils className="w-24 h-24 text-charcoal" />
               </div>
 
-              <span className="inline-block px-3 py-1 bg-sage/20 text-sage text-xs font-bold uppercase tracking-wider rounded-full mb-4">
-                Ancient Alternative
-              </span>
+              <div className="flex justify-between items-center mb-4">
+                <span className="inline-block px-3 py-1 bg-sage/20 text-sage text-xs font-bold uppercase tracking-wider rounded-full">
+                  Ancient Alternative
+                </span>
+                {dosha && (
+                  <span className="text-[10px] font-bold text-clay uppercase tracking-widest">
+                    Optimized for {dosha}
+                  </span>
+                )}
+              </div>
               
               <h2 className="text-3xl font-bold text-charcoal mb-2">{result.name}</h2>
               <p className="text-xl text-clay font-serif italic mb-6">"{result.description}"</p>
@@ -102,7 +128,7 @@ export default function SwapperPage() {
               <div className="space-y-4">
                 <div className="bg-white/50 p-4 rounded-xl">
                   <h3 className="font-semibold text-charcoal text-sm mb-1 uppercase tracking-wide">Why this works</h3>
-                  <p className="text-charcoal/80">{result.why}</p>
+                  <p className="text-charcoal/80 text-sm leading-relaxed">{result.why}</p>
                 </div>
 
                 <div>
@@ -117,9 +143,16 @@ export default function SwapperPage() {
                 </div>
               </div>
 
-              <div className="mt-8 text-center">
-                 <button className="text-sm text-charcoal/40 hover:text-clay underline decoration-dotted">
-                   Save this to my recipe book
+              <div className="mt-8 text-center border-t border-charcoal/5 pt-6">
+                 <button 
+                  onClick={saveToLibrary}
+                  className="text-sm font-bold text-charcoal/40 hover:text-clay flex items-center justify-center gap-2 mx-auto transition-colors"
+                 >
+                   {isSaved ? (
+                     <span className="flex items-center gap-2 text-sage"><CheckCircle2 className="w-4 h-4" /> Added to Jewels</span>
+                   ) : (
+                     <span className="flex items-center gap-2"><Bookmark className="w-4 h-4" /> Save this to my library</span>
+                   )}
                  </button>
               </div>
             </motion.div>
