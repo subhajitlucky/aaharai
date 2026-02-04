@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Stethoscope, Sparkles, AlertCircle, Coffee, Thermometer, Wind } from "lucide-react";
+import { Stethoscope, Sparkles, AlertCircle, Coffee, Thermometer, Wind, Bookmark, CheckCircle2 } from "lucide-react";
 
 const quickSymptoms = [
   { name: "Bloated Stomach", icon: Wind },
@@ -15,6 +15,13 @@ export default function NuskhePage() {
   const [symptom, setSymptom] = useState("");
   const [loading, setLoading] = useState(false);
   const [remedy, setRemedy] = useState<any>(null);
+  const [dosha, setDosha] = useState<string | null>(null);
+  const [isSaved, setIsSaved] = useState(false);
+
+  useEffect(() => {
+    const savedDosha = localStorage.getItem("aaharai_dosha");
+    if (savedDosha) setDosha(savedDosha);
+  }, []);
 
   const fetchRemedy = async (query: string) => {
     const finalQuery = query || symptom;
@@ -22,10 +29,11 @@ export default function NuskhePage() {
 
     setLoading(true);
     setRemedy(null);
+    setIsSaved(false);
     try {
       const res = await fetch("/api/nuskhe", {
         method: "POST",
-        body: JSON.stringify({ symptom: finalQuery }),
+        body: JSON.stringify({ symptom: finalQuery, dosha }),
       });
       const data = await res.json();
       setRemedy(data.remedy);
@@ -36,12 +44,27 @@ export default function NuskhePage() {
     }
   };
 
+  const saveToLibrary = () => {
+    if (!remedy) return;
+    const existing = localStorage.getItem("aaharai_remedies") || "[]";
+    const remedies = JSON.parse(existing);
+    remedies.unshift({ ...remedy, date: new Date().toISOString() });
+    localStorage.setItem("aaharai_remedies", JSON.stringify(remedies.slice(0, 20)));
+    setIsSaved(true);
+    setTimeout(() => setIsSaved(false), 2000);
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
       
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Ancient <span className="text-clay">Nuskhe</span></h1>
         <p className="text-lg text-charcoal/60">Natural remedies from grandmother's kitchen, backed by AI wisdom.</p>
+        {dosha && (
+          <p className="mt-4 text-xs font-bold text-clay uppercase tracking-widest bg-clay/5 inline-block px-4 py-2 rounded-full border border-clay/10">
+            Tuned for {dosha} Prakriti
+          </p>
+        )}
       </div>
 
       {/* Input Section */}
@@ -89,13 +112,21 @@ export default function NuskhePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-[2.5rem] border-t-8 border-clay p-10 shadow-2xl shadow-charcoal/10"
+            className="bg-white rounded-[2.5rem] border-t-8 border-clay p-10 shadow-2xl shadow-charcoal/10 relative overflow-hidden"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-clay/10 rounded-full flex items-center justify-center text-clay">
-                <Sparkles className="w-6 h-6" />
+            <div className="flex justify-between items-start mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-clay/10 rounded-full flex items-center justify-center text-clay">
+                  <Sparkles className="w-6 h-6" />
+                </div>
+                <h2 className="text-3xl font-bold text-charcoal">{remedy.title}</h2>
               </div>
-              <h2 className="text-3xl font-bold text-charcoal">{remedy.title}</h2>
+              <button 
+                onClick={saveToLibrary}
+                className="p-3 bg-sand rounded-2xl text-charcoal/40 hover:text-clay transition-colors"
+              >
+                {isSaved ? <CheckCircle2 className="w-6 h-6 text-sage" /> : <Bookmark className="w-6 h-6" />}
+              </button>
             </div>
 
             <div className="grid md:grid-cols-2 gap-10">

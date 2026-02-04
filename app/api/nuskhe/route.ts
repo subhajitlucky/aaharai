@@ -6,37 +6,39 @@ const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
 export async function POST(request: Request) {
   try {
-    const { symptom } = await request.json();
+    const { symptom, dosha } = await request.json();
     
     if (!symptom) return NextResponse.json({ error: "Symptom is required" }, { status: 400 });
 
     if (!OPENROUTER_API_KEY) {
       return NextResponse.json({ 
         remedy: {
-          title: "Warm Ginger & Honey Elixir",
-          procedure: "Grate 1 inch of fresh ginger, extract the juice, and mix with a spoonful of raw honey.",
-          why: "Ginger reduces inflammation while honey coats the throat and boosts immunity.",
-          warning: "Avoid if you have high acidity."
+          title: "Ginger & Honey Elixir",
+          procedure: "Grind fresh ginger to extract 1 tsp juice. Mix with 1 tsp raw honey and a pinch of black pepper.",
+          why: "Ginger stokes the digestive fire (Agni) while honey soothes the throat.",
+          warning: "Avoid if you have high acidity or ulcers."
         },
         isMock: true
       });
     }
 
+    const doshaContext = dosha ? `The user has a dominant ${dosha} Prakriti. Tailor the remedy to be balancing for them.` : "";
+
     const prompt = `
-      The user is feeling: "${symptom}".
-      Suggest a safe, traditional Indian Home Remedy (Nuskha) using common kitchen ingredients.
+      The user reports this symptom: "${symptom}". ${doshaContext}
+      Provide an Ancient Indian (Ayurvedic) "Nuskha" (Home Remedy) using common kitchen ingredients.
       
-      Rules:
-      1. Use only natural ingredients found in an Indian kitchen.
-      2. Keep it simple and easy to prepare.
-      3. MUST include a small safety disclaimer.
-      
+      Requirements:
+      1. Use ingredients like Turmeric, Cumin, Ginger, Tulsi, Ghee, etc.
+      2. If a Dosha is provided, ensure the remedy doesn't aggravate it (e.g. for Pitta, don't suggest too much heat).
+      3. Keep the procedure simple and actionable.
+
       Format (JSON ONLY):
       {
-        "title": "Name of Remedy",
-        "procedure": "Step-by-step instructions",
-        "why": "The Ayurvedic logic behind it",
-        "warning": "When to avoid this or see a doctor"
+        "title": "Short Creative Name",
+        "procedure": "Step-by-step instructions (max 2 sentences)",
+        "why": "Brief Ayurvedic logic",
+        "warning": "When to avoid this remedy"
       }
     `;
 
@@ -45,11 +47,13 @@ export async function POST(request: Request) {
       headers: {
         "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
+        "HTTP-Referer": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+        "X-Title": "Aaharai"
       },
       body: JSON.stringify({
         "model": "google/gemini-2.0-flash-lite-preview-02-05:free",
         "messages": [
-          {"role": "system", "content": "You are a wise Ayurvedic practitioner. JSON only."},
+          {"role": "system", "content": "You are a Master of Ayurvedic Nuskhe and Ancient Remedies. JSON only."},
           {"role": "user", "content": prompt}
         ]
       })
@@ -62,6 +66,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ remedy: JSON.parse(cleanJson) });
 
   } catch (error) {
-    return NextResponse.json({ error: "Failed to find a remedy" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to find remedy" }, { status: 500 });
   }
 }
