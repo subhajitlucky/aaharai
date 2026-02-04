@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Check, RefreshCcw } from "lucide-react";
+import { ArrowRight, Check, RefreshCcw, Save } from "lucide-react";
 import Link from "next/link";
 import { clsx } from "clsx";
+import { useSession } from "next-auth/react";
 
 // --- Data: The Ayurvedic Questions ---
 type Option = {
@@ -68,6 +69,7 @@ const questions: Question[] = [
 
 // --- Component ---
 export default function PrakritiTest() {
+  const { data: session } = useSession();
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, "Vata" | "Pitta" | "Kapha">>(
     {}
@@ -75,6 +77,7 @@ export default function PrakritiTest() {
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [mealPlan, setMealPlan] = useState<any>(null);
+  const [saving, setSaving] = useState(false);
 
   // Load result from localStorage on mount
   useEffect(() => {
@@ -107,6 +110,22 @@ export default function PrakritiTest() {
     
     setResult(dominant);
     localStorage.setItem("aaharai_dosha", dominant);
+  };
+
+  const saveToProfile = async () => {
+    if (!session?.user || !result) return;
+    setSaving(true);
+    try {
+      await fetch("/api/save-prakriti", {
+        method: "POST",
+        body: JSON.stringify({ userId: (session.user as any).id, prakriti: result }),
+      });
+      alert("Blueprint saved to your sacred profile!");
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setSaving(false);
+    }
   };
 
   const fetchMealPlan = async () => {
@@ -225,30 +244,43 @@ export default function PrakritiTest() {
             </p>
 
             {!mealPlan ? (
-              <div className="flex flex-col gap-4 sm:flex-row justify-center">
-                 <button 
-                  onClick={fetchMealPlan}
-                  disabled={loading}
-                  className="bg-clay text-white px-8 py-4 rounded-full font-bold hover:bg-clay-hover transition-colors shadow-lg shadow-clay/20 disabled:opacity-70 flex items-center justify-center gap-2 min-w-[200px]"
-                 >
-                   {loading ? (
-                     <RefreshCcw className="w-5 h-5 animate-spin" />
-                   ) : (
-                     `Get My ${result} Meal Plan`
-                   )}
-                 </button>
-                 <button 
-                  onClick={() => {
-                    setResult(null);
-                    setCurrentStep(0);
-                    setAnswers({});
-                    setMealPlan(null);
-                    localStorage.removeItem("aaharai_dosha");
-                  }}
-                  className="flex items-center justify-center gap-2 px-6 py-4 rounded-full font-medium text-charcoal border border-charcoal/20 hover:bg-charcoal/5"
-                 >
-                   <RefreshCcw className="w-4 h-4" /> Retake Quiz
-                 </button>
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 sm:flex-row justify-center">
+                  <button 
+                    onClick={fetchMealPlan}
+                    disabled={loading}
+                    className="bg-clay text-white px-8 py-4 rounded-full font-bold hover:bg-clay-hover transition-colors shadow-lg shadow-clay/20 disabled:opacity-70 flex items-center justify-center gap-2 min-w-[200px]"
+                  >
+                    {loading ? (
+                      <RefreshCcw className="w-5 h-5 animate-spin" />
+                    ) : (
+                      `Get My ${result} Meal Plan`
+                    )}
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setResult(null);
+                      setCurrentStep(0);
+                      setAnswers({});
+                      setMealPlan(null);
+                      localStorage.removeItem("aaharai_dosha");
+                    }}
+                    className="flex items-center justify-center gap-2 px-6 py-4 rounded-full font-medium text-charcoal border border-charcoal/20 hover:bg-charcoal/5"
+                  >
+                    <RefreshCcw className="w-4 h-4" /> Retake Quiz
+                  </button>
+                </div>
+                
+                {session?.user && (
+                  <button 
+                    onClick={saveToProfile}
+                    disabled={saving}
+                    className="mt-4 flex items-center justify-center gap-2 text-clay font-bold hover:underline disabled:opacity-50"
+                  >
+                    <Save className="w-4 h-4" /> 
+                    {saving ? "Saving to Gurukul..." : "Save to my Sacred Profile"}
+                  </button>
+                )}
               </div>
             ) : (
               <motion.div
