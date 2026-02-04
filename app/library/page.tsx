@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Search, Leaf, Sparkles, ChevronRight, X, Bookmark, History, Quote } from "lucide-react";
+import { BookOpen, Search, Leaf, Sparkles, ChevronRight, X, Bookmark, History, Quote, Stethoscope, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 export default function AncientLibraryPage() {
@@ -19,7 +19,7 @@ export default function AncientLibraryPage() {
     setSavedSwaps(swaps);
     setSavedRemedies(remedies);
     setPranaLogs(logs);
-  }, []);
+  }, [activeTab]);
 
   const clearItem = (key: string, index: number, stateSetter: any) => {
     const existing = JSON.parse(localStorage.getItem(key) || "[]");
@@ -149,11 +149,46 @@ export default function AncientLibraryPage() {
               </section>
             )}
 
-            {savedSwaps.length === 0 && savedRemedies.length === 0 && (
+            {/* Prana Logs */}
+            {pranaLogs.length > 0 && (
+              <section>
+                <div className="flex items-center gap-2 mb-6">
+                  <History className="w-5 h-5 text-turmeric-700" />
+                  <h2 className="text-2xl font-bold text-charcoal text-left">Sacred Prana Log</h2>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {pranaLogs.map((log, i) => (
+                    <div key={i} className="bg-white p-6 rounded-3xl border border-charcoal/5 shadow-sm relative group">
+                      <button 
+                        onClick={() => clearItem("aaharai_prana_log", i, setPranaLogs)}
+                        className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 p-2 hover:bg-sand rounded-full transition-all"
+                      >
+                        <X className="w-4 h-4 text-charcoal/40" />
+                      </button>
+                      <div className="flex justify-between items-start mb-2">
+                        <span className={`px-2 py-0.5 rounded-md text-[10px] font-black uppercase ${log.category === 'Satvik' ? 'bg-sage/10 text-sage' : 'bg-clay/10 text-clay'}`}>
+                          {log.category}
+                        </span>
+                        <span className="text-[10px] font-bold text-charcoal/30">{new Date(log.date).toLocaleDateString()}</span>
+                      </div>
+                      <h3 className="font-bold text-charcoal text-lg mb-1">{log.items?.[0] || "Ancient Meal"}</h3>
+                      <div className="flex items-center gap-2 mt-2">
+                        <div className="flex-1 h-1.5 bg-sand rounded-full overflow-hidden">
+                          <div className="h-full bg-clay" style={{ width: `${log.score}%` }} />
+                        </div>
+                        <span className="text-[10px] font-bold text-clay">{log.score}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {savedSwaps.length === 0 && savedRemedies.length === 0 && pranaLogs.length === 0 && (
               <div className="text-center py-20 bg-sand/50 rounded-[3rem] border border-dashed border-charcoal/10">
                 <Bookmark className="w-12 h-12 text-charcoal/10 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-charcoal mb-2">Your vault is empty</h3>
-                <p className="text-charcoal/40">Start exploring swaps and remedies to build <br/> your personal library of ancient jewels.</p>
+                <p className="text-charcoal/40">Start exploring scans, swaps, and remedies to build <br/> your personal library of ancient jewels.</p>
               </div>
             )}
           </motion.div>
