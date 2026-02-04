@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Flame, Trophy, Leaf, Zap, ChevronRight, History, Search, Scale, Coffee, ThermometerSun } from "lucide-react";
+import { Flame, Trophy, Leaf, Zap, ChevronRight, History, Search, Scale, Coffee, ThermometerSun, MapPin, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export default function Dashboard() {
@@ -10,6 +10,8 @@ export default function Dashboard() {
   const [recentActivities, setRecentActivities] = useState<any[]>([]);
   const [points, setPoints] = useState(1250);
   const [streak, setStreak] = useState(5);
+  const [seasonalData, setSeasonalData] = useState<any>(null);
+  const [weatherLoading, setWeatherLoading] = useState(true);
 
   useEffect(() => {
     // 1. Load Dosha
@@ -44,16 +46,37 @@ export default function Dashboard() {
 
     if (combined.length > 0) {
       setRecentActivities(combined.slice(0, 5));
-      // Simple points calculation: base 1000 + accumulated
-      const activityPoints = combined.reduce((acc, curr) => acc + parseInt(recentActivities[0]?.points || "0"), 0);
+      const activityPoints = combined.reduce((acc, curr) => acc + parseInt(curr.points || "0"), 0);
       setPoints(1000 + activityPoints);
       setStreak(Math.max(1, combined.length));
     } else {
-      // Mock data if empty
       setRecentActivities([
         { name: "Mung Dal Khichdi", type: "Lunch", date: "Today", points: "+20", icon: "meal" },
         { name: "Ragi Pizza Swap", type: "Dinner", date: "Yesterday", points: "+15", icon: "swap" },
       ]);
+    }
+
+    // 3. Fetch Seasonal Wisdom (Ritucharya)
+    const fetchRitucharya = async (lat?: number, lon?: number) => {
+      try {
+        const url = lat ? `/api/ritucharya?lat=${lat}&lon=${lon}` : '/api/ritucharya';
+        const res = await fetch(url);
+        const data = await res.json();
+        setSeasonalData(data);
+      } catch (e) {
+        console.error("Failed to load seasonal wisdom", e);
+      } finally {
+        setWeatherLoading(false);
+      }
+    };
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => fetchRitucharya(pos.coords.latitude, pos.coords.longitude),
+        () => fetchRitucharya() // Fallback to default
+      );
+    } else {
+      fetchRitucharya();
     }
   }, []);
 
@@ -140,14 +163,34 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Seasonal Context (New Feature) */}
-          <div className="bg-clay/5 p-8 rounded-[2rem] border border-clay/10 flex items-center gap-6">
-            <div className="w-16 h-16 bg-clay/10 rounded-2xl flex items-center justify-center text-clay shrink-0">
-              <ThermometerSun size={32} />
+          {/* Seasonal Context (Real Data Integration) */}
+          <div className="bg-clay/5 p-8 rounded-[2rem] border border-clay/10 relative overflow-hidden group">
+            <div className="absolute top-4 right-8 flex items-center gap-2 text-[10px] font-bold text-clay uppercase tracking-widest bg-white/50 px-3 py-1 rounded-full border border-clay/10 shadow-sm">
+              <MapPin size={10} /> {weatherLoading ? "Locating..." : seasonalData?.location === "detected" ? "Your Location" : "Vedic Zone"}
             </div>
-            <div>
-              <h3 className="font-bold text-charcoal text-lg">Seasonal Wisdom (Ritucharya)</h3>
-              <p className="text-sm text-charcoal/60 leading-relaxed">It's currently Vata season. Prioritize warm, unctuous (oily) foods and avoid cold salads to maintain digestive fire.</p>
+            
+            <div className="flex items-start gap-6">
+              <div className="w-16 h-16 bg-clay/10 rounded-2xl flex flex-col items-center justify-center text-clay shrink-0">
+                {weatherLoading ? (
+                  <Sparkles className="animate-spin w-8 h-8" />
+                ) : (
+                  <>
+                    <span className="text-xs font-black leading-none mb-1">{seasonalData?.temperature}°C</span>
+                    <ThermometerSun size={24} />
+                  </>
+                )}
+              </div>
+              <div>
+                <h3 className="font-bold text-charcoal text-lg mb-1 flex items-center gap-2">
+                  Seasonal Wisdom ({seasonalData?.season || "Ritucharya"})
+                </h3>
+                <p className="text-sm text-charcoal/60 leading-relaxed mb-4">
+                  {seasonalData?.advice?.food || "Loading ancient seasonal guidance..."}
+                </p>
+                <div className="flex items-center gap-2 text-xs font-medium text-clay bg-clay/10 px-3 py-1.5 rounded-lg w-fit">
+                  <Zap size={12} /> {seasonalData?.advice?.ritual}
+                </div>
+              </div>
             </div>
           </div>
         </div>
