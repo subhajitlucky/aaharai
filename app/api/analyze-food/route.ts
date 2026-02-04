@@ -37,7 +37,7 @@ export async function POST(request: Request) {
             "content": [
               {
                 "type": "text",
-                "text": "Analyze this food image based on Ancient Indian (Ayurvedic) dietary principles. Categorize it as Satvik, Rajasic, or Tamasic. Give a Prana Score out of 100. Return ONLY JSON: { \"score\": number, \"category\": \"string\", \"breakdown\": \"string\", \"advice\": \"string\", \"items\": [\"string\"] }"
+                "text": "Analyze this food image as a Master Ayurvedic Nutritionist. Perform a deep Satvik analysis:\n\n1. Identify all visible ingredients and assess their freshness/processing level.\n2. Classify the overall meal as Satvik (Pure, Fresh, Harmonious), Rajasic (Stimulating, Spicy, Heavy), or Tamasic (Stale, Over-processed, Dull).\n3. Calculate a 'Prana Score' (0-100) based on:\n   - Freshness (30%)\n   - Ingredient Quality (30%)\n   - Balancing potential for Doshas (20%)\n   - Processing level (20%)\n4. Provide a 'breakdown' explaining the logic and an 'advice' snippet from a Gurukul perspective (e.g., 'Add ghee to balance dryness' or 'Reduce spice to calm Pitta').\n\nReturn ONLY JSON:\n{ \n  \"score\": number, \n  \"category\": \"Satvik\" | \"Rajasic\" | \"Tamasic\", \n  \"breakdown\": \"string\", \n  \"advice\": \"string\", \n  \"items\": [\"string\"] \n}"
               },
               {
                 "type": "image_url",
