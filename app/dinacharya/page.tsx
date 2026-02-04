@@ -1,17 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sunrise, Moon, Clock, Sparkles, Layout, ChevronRight } from "lucide-react";
+import { Sunrise, Moon, Clock, Sparkles, Layout, ChevronRight, CheckCircle2 } from "lucide-react";
 
 export default function DinacharyaPage() {
   const [wakeUpTime, setWakeUpTime] = useState("06:00");
   const [dosha, setDosha] = useState("Pitta");
   const [loading, setLoading] = useState(false);
   const [rituals, setRituals] = useState<any[] | null>(null);
+  const [isSaved, setIsSaved] = useState(false);
+
+  // Sync with localStorage on mount
+  useEffect(() => {
+    const savedDosha = localStorage.getItem("aaharai_dosha");
+    if (savedDosha) setDosha(savedDosha);
+
+    const savedRoutine = localStorage.getItem("aaharai_routine");
+    if (savedRoutine) {
+      try {
+        setRituals(JSON.parse(savedRoutine));
+      } catch (e) {
+        console.error("Failed to parse saved routine", e);
+      }
+    }
+  }, []);
 
   const generateRoutine = async () => {
     setLoading(true);
+    setIsSaved(false);
     try {
       const res = await fetch("/api/dinacharya", {
         method: "POST",
@@ -24,6 +41,13 @@ export default function DinacharyaPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const saveRoutine = () => {
+    if (!rituals) return;
+    localStorage.setItem("aaharai_routine", JSON.stringify(rituals));
+    setIsSaved(true);
+    setTimeout(() => setIsSaved(false), 3000);
   };
 
   return (
@@ -154,8 +178,15 @@ export default function DinacharyaPage() {
                 ))}
                 
                 <div className="mt-8 text-center">
-                   <button className="text-sm font-bold text-clay flex items-center gap-2 mx-auto hover:underline">
-                     Save Routine to My Dashboard <ChevronRight className="w-4 h-4" />
+                   <button 
+                    onClick={saveRoutine}
+                    className="text-sm font-bold text-clay flex items-center gap-2 mx-auto hover:underline"
+                   >
+                     {isSaved ? (
+                       <span className="flex items-center gap-2 text-sage"><CheckCircle2 className="w-4 h-4" /> Routine Saved!</span>
+                     ) : (
+                       <span className="flex items-center gap-2">Save Routine to My Dashboard <ChevronRight className="w-4 h-4" /></span>
+                     )}
                    </button>
                 </div>
               </motion.div>
