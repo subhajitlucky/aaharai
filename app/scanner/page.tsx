@@ -2,13 +2,16 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Camera, Sparkles, CheckCircle2, Info, History, Bookmark } from "lucide-react";
+import { Camera, Sparkles, CheckCircle2, Info, Bookmark, Save } from "lucide-react";
+import { useSession } from "next-auth/react";
 
 export default function ScannerPage() {
+  const { data: session } = useSession();
   const [image, setImage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState<any>(null);
   const [isSaved, setIsSaved] = useState(false);
+  const [saving, setSaving] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,16 +44,38 @@ export default function ScannerPage() {
     }
   };
 
-  const saveToTracker = () => {
+  const saveToTracker = async () => {
     if (!analysis) return;
+    
+    // Save to Local Storage first (for immediate feedback/guest users)
     const existing = localStorage.getItem("aaharai_prana_log") || "[]";
     const logs = JSON.parse(existing);
     logs.unshift({
       ...analysis,
       date: new Date().toISOString(),
-      image: image // Optional: Store small thumbnails if needed, but keeping it simple for now
     });
     localStorage.setItem("aaharai_prana_log", JSON.stringify(logs.slice(0, 50)));
+
+    // If logged in, save to Database
+    if (session?.user) {
+      setSaving(true);
+      try {
+        await fetch("/api/log-food", {
+          method: "POST",
+          body: JSON.stringify({
+            userId: (session.user as any).id,
+            foodName: analysis.items?.[0] || "Ayurvedic Meal",
+            score: analysis.score,
+            category: analysis.category
+          }),
+        });
+      } catch (e) {
+        console.error("Database save failed", e);
+      } finally {
+        setSaving(false);
+      }
+    }
+
     setIsSaved(true);
     setTimeout(() => setIsSaved(false), 3000);
   };
@@ -183,10 +208,17 @@ export default function ScannerPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <button 
                       onClick={saveToTracker}
-                      className="py-4 bg-charcoal text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-charcoal/90 transition-all"
+                      disabled={saving}
+                      className="py-4 bg-charcoal text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-charcoal/90 transition-all disabled:opacity-50"
                     >
-                      {isSaved ? <CheckCircle2 className="w-5 h-5 text-sage" /> : <Bookmark className="w-5 h-5" />}
-                      {isSaved ? "Log Saved" : "Add to Tracker"}
+                      {saving ? (
+                        <Sparkles className="animate-spin w-5 h-5" />
+                      ) : isSaved ? (
+                        <CheckCircle2 className="w-5 h-5 text-sage" />
+                      ) : (
+                        <Save className="w-5 h-5" />
+                      )}
+                      {saving ? "Saving..." : isSaved ? "Log Saved" : "Add to Tracker"}
                     </button>
                     <button 
                       onClick={() => {
