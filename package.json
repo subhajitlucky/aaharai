@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate:content": "node scripts/validate-content.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -14,6 +15,7 @@
     "@prisma/client": "^7.2.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.25.0",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.562.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "16.0.1",

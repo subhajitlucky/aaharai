@@ -1,0 +1,51 @@
+---
+# Copy this file to <slug>.mdx and fill EVERY field. Files starting with _ are
+# skipped by validation and never built. The build FAILS if any field is missing,
+# because incomplete provenance is worse than no recipe.
+slug: your-recipe-slug
+title: Dish Name in English
+nativeName:
+  text: খাবারের নাম
+  script: bengali
+transliteration: khabarer nam
+dialectVariant: Bangal / Ghoti / household style (optional)
+region:
+  state: West Bengal
+  subRegion: district or sub-region (optional)
+  community: community or household tradition (optional)
+languageNote: anything a reader needs about the dialect/terms (optional)
+lineage:
+  sourceType: oral # oral | family-manuscript | community-cookbook
+  entries:
+    - name: Person who taught it
+      relation: grandmother
+      place: Town, District
+      era: 1950s-1990s
+  publishedRef: only if sourceType is community-cookbook (optional)
+verification:
+  tier: family-archive # family-archive | community-verified
+  verifierName: who checked it
+  verifiedAt: "2026-01-01"
+occasions:
+  - everyday # add festival names, lifecycle events, vrat etc.
+seasonalWindow: e.g. October-January (optional)
+dietaryFrame: satvik # satvik | jain | no-onion-garlic | non-veg | vegan | vegetarian
+ingredients:
+  - item: ingredient name
+    qty: 1 cup
+    note: preparation note (optional)
+    nativeTerm: local term (optional)
+steps:
+  - text: What to do.
+    tip: why this step matters (optional)
+    technique: named technique (optional)
+time:
+  prepMinutes: 15
+  cookMinutes: 30
+servings: 4
+variations: [] # or [{ label: ..., note: ... }]
+authenticityNotes: what this is NOT; common homogenized mistakes (optional)
+heroImage: /images/recipes/slug/hero.jpg (optional)
+---
+
+# Optional prose body: chef notes, stories from the lineage holder.
