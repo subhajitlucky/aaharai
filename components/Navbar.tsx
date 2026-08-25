@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Leaf, Search, User, BarChart3, LogOut, LayoutDashboard, Sunrise, Camera, Stethoscope, BookOpen } from "lucide-react";
+import { Leaf, Search, User, BarChart3, LogOut, LayoutDashboard, Sunrise, Camera, Stethoscope, BookOpen, CookingPot } from "lucide-react";
 import { clsx } from "clsx";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
@@ -14,6 +14,7 @@ const navItems = [
   { name: "Satvik Scanner", href: "/scanner", icon: Camera },
   { name: "Junk Swapper", href: "/swapper", icon: Search },
   { name: "Remedies", href: "/nuskhe", icon: Stethoscope },
+  { name: "Recipes", href: "/recipes", icon: CookingPot },
   { name: "Ancient Library", href: "/library", icon: BookOpen },
 ];
 
