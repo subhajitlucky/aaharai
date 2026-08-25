@@ -2,15 +2,35 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Flame, Trophy, Leaf, Zap, ChevronRight, History, Search, Scale, Coffee, ThermometerSun, MapPin, Sparkles } from "lucide-react";
+import { Flame, Trophy, Zap, ChevronRight, History, Scale, Coffee, ThermometerSun, MapPin, Sparkles } from "lucide-react";
 import Link from "next/link";
+
+interface SeasonalAdvice {
+  food?: string;
+  ritual?: string;
+}
+
+interface SeasonalData {
+  location?: string;
+  temperature?: number | string;
+  season?: string;
+  advice?: SeasonalAdvice;
+}
+
+interface Activity {
+  name: string;
+  type?: string;
+  date: string;
+  points: string;
+  icon: string;
+}
 
 export default function Dashboard() {
   const [dosha, setDosha] = useState("Pitta");
-  const [recentActivities, setRecentActivities] = useState<any[]>([]);
-  const [points, setPoints] = useState(1250);
-  const [streak, setStreak] = useState(5);
-  const [seasonalData, setSeasonalData] = useState<any>(null);
+  const [recentActivities, setRecentActivities] = useState<Activity[]>([]);
+  const [points, setPoints] = useState(0);
+  const [streak, setStreak] = useState(0);
+  const [seasonalData, setSeasonalData] = useState<SeasonalData | null>(null);
   const [weatherLoading, setWeatherLoading] = useState(true);
 
   useEffect(() => {
@@ -22,38 +42,35 @@ export default function Dashboard() {
     const savedLogs = localStorage.getItem("aaharai_prana_log");
     const savedSwaps = localStorage.getItem("aaharai_swaps");
     
-    let combined: any[] = [];
+    let combined: Activity[] = [];
     if (savedLogs) {
-      const logs = JSON.parse(savedLogs);
-      combined = [...combined, ...logs.map((l: any) => ({
+      const logs = JSON.parse(savedLogs) as { items?: string[]; category?: string; date?: string; score?: number }[];
+      combined = [...combined, ...logs.map((l) => ({
         name: l.items?.[0] || "Ancient Meal",
         type: l.category,
-        date: new Date(l.date).toLocaleDateString(),
-        points: `+${Math.floor(l.score / 5)}`,
+        date: new Date(l.date ?? Date.now()).toLocaleDateString(),
+        points: `+${Math.floor((l.score ?? 0) / 5)}`,
         icon: "meal"
       }))];
     }
     if (savedSwaps) {
-      const swaps = JSON.parse(savedSwaps);
-      combined = [...combined, ...swaps.map((s: any) => ({
-        name: s.name,
+      const swaps = JSON.parse(savedSwaps) as { name?: string; date?: string }[];
+      combined = [...combined, ...swaps.map((s) => ({
+        name: s.name ?? "Swap",
         type: "Swap",
-        date: new Date(s.date).toLocaleDateString(),
+        date: new Date(s.date ?? Date.now()).toLocaleDateString(),
         points: "+15",
         icon: "swap"
       }))];
     }
 
+    // Honesty policy: never fabricate activity. Show zeros until the user logs.
     if (combined.length > 0) {
       setRecentActivities(combined.slice(0, 5));
       const activityPoints = combined.reduce((acc, curr) => acc + parseInt(curr.points || "0"), 0);
-      setPoints(1000 + activityPoints);
-      setStreak(Math.max(1, combined.length));
-    } else {
-      setRecentActivities([
-        { name: "Mung Dal Khichdi", type: "Lunch", date: "Today", points: "+20", icon: "meal" },
-        { name: "Ragi Pizza Swap", type: "Dinner", date: "Yesterday", points: "+15", icon: "swap" },
-      ]);
+      setPoints(activityPoints);
+      const activeDays = new Set(combined.map((c) => c.date)).size;
+      setStreak(activeDays);
     }
 
     // 3. Fetch Seasonal Wisdom (Ritucharya)
@@ -123,7 +140,7 @@ export default function Dashboard() {
             </div>
             
             <h2 className="text-2xl font-bold mb-4">21-Day Satvik Challenge</h2>
-            <p className="text-white/60 mb-8 max-w-md">Align your gut with your ancestors. Reach 21 days to unlock the "Ancient Warrior" badge.</p>
+            <p className="text-white/60 mb-8 max-w-md">Align your gut with your ancestors. Reach 21 days to unlock the &quot;Ancient Warrior&quot; badge.</p>
             
             <div className="w-full h-4 bg-white/10 rounded-full overflow-hidden mb-4">
               <motion.div 
@@ -203,6 +220,12 @@ export default function Dashboard() {
           </div>
           
           <div className="space-y-6">
+            {recentActivities.length === 0 && (
+              <div className="text-center py-10 border border-dashed border-charcoal/10 rounded-2xl">
+                <p className="text-charcoal/50 text-sm mb-1">Your Sacred Log is empty.</p>
+                <p className="text-charcoal/30 text-xs">Analyze your first meal below to begin your journey.</p>
+              </div>
+            )}
             {recentActivities.map((activity, idx) => (
               <div key={idx} className="flex items-center justify-between group cursor-pointer">
                 <div className="flex items-center gap-4">
