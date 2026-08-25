@@ -96,8 +96,6 @@ property rather than a marketing claim:
 
 ## Known Gaps
 
-- PWA icons referenced by `public/manifest.json` (`/icon.png`, `/icon-512.png`)
-  are missing from `public/`.
 - `prisma/migrations/` is not yet committed; schema changes currently rely on
   `prisma db push`.
 - The dashboard shows hardcoded fallback stats (points/streak/sample activity)

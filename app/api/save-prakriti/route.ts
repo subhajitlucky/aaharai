@@ -1,11 +1,22 @@
 import { prisma } from "@/lib/prisma";
+import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
+import { authOptions } from "@/lib/auth/auth-options";
 
 export async function POST(request: Request) {
   try {
-    const { userId, prakriti } = await request.json();
+    // SECURITY: never trust userId from the request body (spoofable).
+    // Derive it from the next-auth session instead.
+    const session = await getServerSession(authOptions);
+    const userId = (session?.user as { id?: string } | undefined)?.id;
 
-    if (!userId || !prakriti) {
+    if (!userId) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const { prakriti } = await request.json();
+
+    if (!prakriti) {
       return NextResponse.json({ error: "Missing data" }, { status: 400 });
     }
 
