@@ -21,7 +21,10 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev",
+    // CI runs against the production build (npm run build) so the suite
+    // exercises what actually ships. Locally we reuse the dev server for
+    // a fast edit/run loop.
+    command: process.env.CI ? "npm run start" : "npm run dev",
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

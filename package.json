@@ -8,6 +8,7 @@
     "mysql2": "3.23.1"
   },
   "scripts": {
+    "postinstall": "prisma generate",
     "dev": "next dev",
     "build": "npm run validate:data && next build",
     "start": "next start",
@@ -20,6 +21,8 @@
     "validate:content": "tsx scripts/validate-content.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "generate:catalog": "tsx scripts/generate-catalog.ts",
+    "db:migrate": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
     "check": "npm run lint && npm run typecheck && npm run test:coverage && npm run validate:data && npm run build"
   },
   "dependencies": {
@@ -50,6 +53,7 @@
     "@types/react-dom": "^19",
     "@vitest/coverage-v8": "^4.1.11",
     "baseline-browser-mapping": "^2.9.14",
+    "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
     "jsdom": "^27.0.1",

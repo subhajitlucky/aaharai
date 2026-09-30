@@ -4,7 +4,7 @@ import GoogleProvider from "next-auth/providers/google";
 import { prisma } from "@/lib/prisma";
 
 export const authOptions: NextAuthOptions = {
-  debug: true,
+  debug: process.env.NODE_ENV !== "production",
   adapter: PrismaAdapter(prisma),
   session: {
     strategy: "jwt",

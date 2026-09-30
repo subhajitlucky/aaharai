@@ -16,6 +16,9 @@ const eslintConfig = defineConfig([
     "test-results/**",
     "blob-report/**",
     "playwright/.cache/**",
+    // Playwright browser binaries (see PLAYWRIGHT_BROWSERS_PATH). These are
+    // minified bundles, not source, and will otherwise fail type-aware rules.
+    ".playwright-browsers/**",
     "next-env.d.ts",
   ]),
 ]);
