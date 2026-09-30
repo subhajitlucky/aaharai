@@ -8347,6 +8347,2333 @@
         "Water and listed ingredients without an exact USDA SR Legacy food record are excluded explicitly.",
         "Proxy ingredient records are labeled in this manifest and are not laboratory analysis of the prepared dish; nutrients absent from a selected source row are not imputed."
       ]
+    },
+    {
+      "recipeId": "recipe-kashmiri-pulao",
+      "servingCount": 6,
+      "ingredients": [
+        {
+          "ingredientId": "ingredient-rice",
+          "quantity": 500,
+          "unit": "g",
+          "form": "raw milled white rice",
+          "sourceFoodId": 168931,
+          "sourceFoodDescription": "Rice, white, short-grain, raw, unenriched",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 358,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 6.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.52,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 79.2,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 1790,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 32.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 2.6,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 396,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "long grain"
+        },
+        {
+          "ingredientId": "ingredient-onion",
+          "quantity": 100,
+          "unit": "g",
+          "form": "onion",
+          "sourceFoodId": 170000,
+          "sourceFoodDescription": "Onions, raw",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 40,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 1.1,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.1,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 9.34,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 1.7,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 40,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 1.1,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.1,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 9.34,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 1.7,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "sliced vertically"
+        },
+        {
+          "ingredientId": "ingredient-cinnamon",
+          "quantity": 5,
+          "unit": "g",
+          "form": "cinnamon",
+          "sourceFoodId": 171320,
+          "sourceFoodDescription": "Spices, cinnamon, ground",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 247,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 3.99,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 1.24,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 80.6,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 53.1,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 12.35,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.2,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.06,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 4.03,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 2.66,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "Quantity taken from the registered source record; values are per 100 g as published in USDA SR Legacy."
+        },
+        {
+          "ingredientId": "ingredient-cardamom",
+          "quantity": 5,
+          "unit": "g",
+          "form": "cardamom",
+          "sourceFoodId": 170919,
+          "sourceFoodDescription": "Spices, cardamom",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 311,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 10.8,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 6.7,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 68.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 28,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 15.55,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.54,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.34,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 3.43,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 1.4,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "Quantity taken from the registered source record; values are per 100 g as published in USDA SR Legacy."
+        },
+        {
+          "ingredientId": "ingredient-cloves",
+          "quantity": 5,
+          "unit": "g",
+          "form": "cloves",
+          "sourceFoodId": 171321,
+          "sourceFoodDescription": "Spices, cloves, ground",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 274,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 5.97,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 13,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 65.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 33.9,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 13.7,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.3,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.65,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 3.28,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 1.7,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "Quantity taken from the registered source record; values are per 100 g as published in USDA SR Legacy."
+        },
+        {
+          "ingredientId": "ingredient-turmeric",
+          "quantity": 1,
+          "unit": "g",
+          "form": "turmeric powder",
+          "sourceFoodId": 172231,
+          "sourceFoodDescription": "Spices, turmeric, ground",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 312,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 9.68,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 3.25,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 67.1,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 22.7,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 3.12,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.1,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.03,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0.67,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0.23,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "a pinch"
+        },
+        {
+          "ingredientId": "ingredient-saffron",
+          "quantity": 1,
+          "unit": "g",
+          "form": "dried strands",
+          "sourceFoodId": 170934,
+          "sourceFoodDescription": "Spices, saffron",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 310,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 11.4,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 5.85,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 65.4,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 3.1,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.11,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.06,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0.65,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "Quantity taken from the registered source record; values are per 100 g as published in USDA SR Legacy."
+        },
+        {
+          "ingredientId": "ingredient-milk",
+          "quantity": 10,
+          "unit": "ml",
+          "form": "cow milk",
+          "sourceFoodId": 171265,
+          "sourceFoodDescription": "Milk, whole, 3.25% milkfat, with added vitamin D",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 61,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 3.15,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 3.25,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 4.8,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 6.1,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.32,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.33,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0.48,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "warm, for dissolving saffron"
+        },
+        {
+          "ingredientId": "ingredient-walnut",
+          "quantity": 20,
+          "unit": "g",
+          "form": "walnut",
+          "sourceFoodId": 170187,
+          "sourceFoodDescription": "Nuts, walnuts, english",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 654,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 15.2,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 65.2,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 13.7,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 130.8,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 3.04,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 13.04,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 2.74,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "Quantity taken from the registered source record; values are per 100 g as published in USDA SR Legacy."
+        },
+        {
+          "ingredientId": "ingredient-cashew",
+          "quantity": 20,
+          "unit": "g",
+          "form": "cashew nut",
+          "sourceFoodId": 170162,
+          "sourceFoodDescription": "Nuts, cashew nuts, raw",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 553,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 18.2,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 43.8,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 30.2,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 3.3,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 110.6,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 3.64,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 8.76,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 6.04,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0.66,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "Quantity taken from the registered source record; values are per 100 g as published in USDA SR Legacy."
+        },
+        {
+          "ingredientId": "ingredient-vegetable-oil",
+          "quantity": 50,
+          "unit": "g",
+          "form": "vegetable oil",
+          "sourceFoodId": 172336,
+          "sourceFoodDescription": "Oil, canola",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 884,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 100,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 442,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 50,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "Quantity taken from the registered source record; values are per 100 g as published in USDA SR Legacy."
+        },
+        {
+          "ingredientId": "ingredient-water",
+          "quantity": 1000,
+          "unit": "ml",
+          "form": "water",
+          "sourceFoodId": null,
+          "sourceValues": [],
+          "contribution": [],
+          "includedInNutrition": false,
+          "exclusionReason": "cooking liquid; excluded from nutrient totals"
+        },
+        {
+          "ingredientId": "ingredient-salt",
+          "quantity": 10,
+          "unit": "g",
+          "form": "table salt",
+          "sourceFoodId": null,
+          "sourceValues": [],
+          "contribution": [],
+          "includedInNutrition": false,
+          "exclusionReason": "to taste; excluded from nutrient totals"
+        }
+      ],
+      "totals": [
+        {
+          "nutrient": "energy",
+          "amount": 427.89,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 6.98,
+          "unit": "g"
+        },
+        {
+          "nutrient": "total fat",
+          "amount": 12.66,
+          "unit": "g"
+        },
+        {
+          "nutrient": "carbohydrate",
+          "amount": 71.11,
+          "unit": "g"
+        },
+        {
+          "nutrient": "dietary fibre",
+          "amount": 1.39,
+          "unit": "g"
+        }
+      ],
+      "limitations": [
+        "Recipe-level values are estimates; cooking yield and moisture changes are not modeled.",
+        "Water and salt are listed as exclusions and contribute nothing to the totals.",
+        "Millilitre quantities are treated as grams; density is not modeled."
+      ]
+    },
+    {
+      "recipeId": "recipe-modur-pulao",
+      "servingCount": 8,
+      "ingredients": [
+        {
+          "ingredientId": "ingredient-rice",
+          "quantity": 320,
+          "unit": "g",
+          "form": "raw milled white rice",
+          "sourceFoodId": 168931,
+          "sourceFoodDescription": "Rice, white, short-grain, raw, unenriched",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 358,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 6.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.52,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 79.2,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 1145.6,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 20.8,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 1.66,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 253.44,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "long grain basmati, from 2 cups"
+        },
+        {
+          "ingredientId": "ingredient-sugar",
+          "quantity": 400,
+          "unit": "g",
+          "form": "sugar",
+          "sourceFoodId": 169655,
+          "sourceFoodDescription": "Sugars, granulated",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 387,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 100,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 1548,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 400,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "from 2 cups"
+        },
+        {
+          "ingredientId": "ingredient-ghee",
+          "quantity": 110,
+          "unit": "g",
+          "form": "ghee",
+          "sourceFoodId": 171314,
+          "sourceFoodDescription": "Butter, Clarified butter (ghee)",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 900,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 100,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 990,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 110,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "from 1/2 cup"
+        },
+        {
+          "ingredientId": "ingredient-cardamom",
+          "quantity": 2,
+          "unit": "g",
+          "form": "cardamom",
+          "sourceFoodId": 170919,
+          "sourceFoodDescription": "Spices, cardamom",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 311,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 10.8,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 6.7,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 68.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 28,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 6.22,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.22,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.13,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 1.37,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0.56,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "whole, 1/2 tsp"
+        },
+        {
+          "ingredientId": "ingredient-cloves",
+          "quantity": 2,
+          "unit": "g",
+          "form": "cloves",
+          "sourceFoodId": 171321,
+          "sourceFoodDescription": "Spices, cloves, ground",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 274,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 5.97,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 13,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 65.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 33.9,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 5.48,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.12,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.26,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 1.31,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0.68,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "1/2 tsp"
+        },
+        {
+          "ingredientId": "ingredient-black-pepper",
+          "quantity": 2,
+          "unit": "g",
+          "form": "black pepper",
+          "sourceFoodId": 170931,
+          "sourceFoodDescription": "Spices, pepper, black",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 251,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 10.4,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 3.26,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 64,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 25.3,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 5.02,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.21,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.07,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 1.28,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0.51,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "black peppercorns, 1/2 tsp"
+        },
+        {
+          "ingredientId": "ingredient-cinnamon",
+          "quantity": 2,
+          "unit": "g",
+          "form": "cinnamon",
+          "sourceFoodId": 171320,
+          "sourceFoodDescription": "Spices, cinnamon, ground",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 247,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 3.99,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 1.24,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 80.6,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 53.1,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 4.94,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.08,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.02,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 1.61,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 1.06,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "1/2 tsp"
+        },
+        {
+          "ingredientId": "ingredient-bay-leaf",
+          "quantity": 1,
+          "unit": "g",
+          "form": "bay leaf",
+          "sourceFoodId": 170917,
+          "sourceFoodDescription": "Spices, bay leaf",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 313,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 7.61,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 8.36,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 75,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 26.3,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 3.13,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.08,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.08,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0.75,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0.26,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "5 leaves"
+        },
+        {
+          "ingredientId": "ingredient-saffron",
+          "quantity": 0.1,
+          "unit": "g",
+          "form": "dried strands",
+          "sourceFoodId": 170934,
+          "sourceFoodDescription": "Spices, saffron",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 310,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 11.4,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 5.85,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 65.4,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 0.31,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.01,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.01,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0.07,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "Quantity taken from the registered source record; values are per 100 g as published in USDA SR Legacy."
+        },
+        {
+          "ingredientId": "ingredient-milk",
+          "quantity": 30,
+          "unit": "ml",
+          "form": "cow milk",
+          "sourceFoodId": 171265,
+          "sourceFoodDescription": "Milk, whole, 3.25% milkfat, with added vitamin D",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 61,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 3.15,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 3.25,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 4.8,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 18.3,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.95,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.98,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 1.44,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "2 tbsp, for soaking saffron"
+        },
+        {
+          "ingredientId": "ingredient-almond",
+          "quantity": 60,
+          "unit": "g",
+          "form": "almond",
+          "sourceFoodId": 170567,
+          "sourceFoodDescription": "Nuts, almonds",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 579,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 21.2,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 49.9,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 21.6,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 347.4,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 12.72,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 29.94,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 12.96,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "blanched and split, 1/2 cup"
+        },
+        {
+          "ingredientId": "ingredient-raisins",
+          "quantity": 75,
+          "unit": "g",
+          "form": "golden seedless",
+          "sourceFoodId": 168164,
+          "sourceFoodDescription": "Raisins, golden, seedless",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 301,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 3.28,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.2,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 80,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 225.75,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 2.46,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.15,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 60,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "1/2 cup"
+        },
+        {
+          "ingredientId": "ingredient-desiccated-coconut",
+          "quantity": 40,
+          "unit": "g",
+          "form": "dried desiccated coconut kernel",
+          "sourceFoodId": 170170,
+          "sourceFoodDescription": "Nuts, coconut meat, dried (desiccated), not sweetened",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 660,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 6.88,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 64.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 23.6,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 16.3,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 264,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 2.75,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 25.8,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 9.44,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 6.52,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "dry coconut slivers, 1/2 cup"
+        },
+        {
+          "ingredientId": "ingredient-dates",
+          "quantity": 75,
+          "unit": "g",
+          "form": "dried medjool",
+          "sourceFoodId": 168191,
+          "sourceFoodDescription": "Dates, medjool",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 277,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 1.81,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.15,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 75,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 207.75,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 1.36,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.11,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 56.25,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "dried, 1/2 cup"
+        },
+        {
+          "ingredientId": "ingredient-water",
+          "quantity": 120,
+          "unit": "ml",
+          "form": "water",
+          "sourceFoodId": null,
+          "sourceValues": [],
+          "contribution": [],
+          "includedInNutrition": false,
+          "exclusionReason": "added with the sugar syrup; excluded from nutrient totals"
+        }
+      ],
+      "totals": [
+        {
+          "nutrient": "energy",
+          "amount": 596.49,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 5.22,
+          "unit": "g"
+        },
+        {
+          "nutrient": "total fat",
+          "amount": 21.15,
+          "unit": "g"
+        },
+        {
+          "nutrient": "carbohydrate",
+          "amount": 99.99,
+          "unit": "g"
+        },
+        {
+          "nutrient": "dietary fibre",
+          "amount": 1.2,
+          "unit": "g"
+        }
+      ],
+      "limitations": [
+        "Recipe-level values are estimates; cooking yield and moisture changes are not modeled.",
+        "Water and salt are listed as exclusions and contribute nothing to the totals.",
+        "Millilitre quantities are treated as grams; density is not modeled."
+      ]
+    },
+    {
+      "recipeId": "recipe-pukhlein",
+      "servingCount": 6,
+      "ingredients": [
+        {
+          "ingredientId": "ingredient-rice-flour",
+          "quantity": 120,
+          "unit": "g",
+          "form": "white rice flour",
+          "sourceFoodId": 169714,
+          "sourceFoodDescription": "Rice flour, white, unenriched",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 366,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 5.95,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 1.42,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 80.1,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 2.4,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 439.2,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 7.14,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 1.7,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 96.12,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 2.88,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "from 1 cup"
+        },
+        {
+          "ingredientId": "ingredient-jaggery",
+          "quantity": 120,
+          "unit": "g",
+          "form": "cane jaggery",
+          "sourceFoodId": 169655,
+          "sourceFoodDescription": "Sugars, granulated",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 387,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 100,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 464.4,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 120,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "from 1/2 cup"
+        },
+        {
+          "ingredientId": "ingredient-water",
+          "quantity": 480,
+          "unit": "ml",
+          "form": "water",
+          "sourceFoodId": null,
+          "sourceValues": [],
+          "contribution": [],
+          "includedInNutrition": false,
+          "exclusionReason": "for melting the jaggery; excluded from nutrient totals"
+        },
+        {
+          "ingredientId": "ingredient-vegetable-oil",
+          "quantity": 180,
+          "unit": "g",
+          "form": "vegetable oil",
+          "sourceFoodId": 172336,
+          "sourceFoodDescription": "Oil, canola",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 884,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 100,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 1591.2,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 180,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "for deep frying"
+        }
+      ],
+      "totals": [
+        {
+          "nutrient": "energy",
+          "amount": 415.8,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.19,
+          "unit": "g"
+        },
+        {
+          "nutrient": "total fat",
+          "amount": 30.28,
+          "unit": "g"
+        },
+        {
+          "nutrient": "carbohydrate",
+          "amount": 36.02,
+          "unit": "g"
+        },
+        {
+          "nutrient": "dietary fibre",
+          "amount": 0.48,
+          "unit": "g"
+        }
+      ],
+      "limitations": [
+        "Recipe-level values are estimates; cooking yield and moisture changes are not modeled.",
+        "Water and salt are listed as exclusions and contribute nothing to the totals.",
+        "Millilitre quantities are treated as grams; density is not modeled."
+      ]
+    },
+    {
+      "recipeId": "recipe-sel-roti",
+      "servingCount": 6,
+      "ingredients": [
+        {
+          "ingredientId": "ingredient-rice",
+          "quantity": 150,
+          "unit": "g",
+          "form": "raw milled white rice",
+          "sourceFoodId": 168931,
+          "sourceFoodDescription": "Rice, white, short-grain, raw, unenriched",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 358,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 6.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.52,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 79.2,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 537,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 9.75,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.78,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 118.8,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "raw rice, from 1 cup"
+        },
+        {
+          "ingredientId": "ingredient-sugar",
+          "quantity": 50,
+          "unit": "g",
+          "form": "sugar",
+          "sourceFoodId": 169655,
+          "sourceFoodDescription": "Sugars, granulated",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 387,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 100,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 193.5,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 50,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "from 1/4 cup"
+        },
+        {
+          "ingredientId": "ingredient-ghee",
+          "quantity": 75,
+          "unit": "g",
+          "form": "ghee",
+          "sourceFoodId": 171314,
+          "sourceFoodDescription": "Butter, Clarified butter (ghee)",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 900,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 100,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 675,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 75,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "from 1/3 cup"
+        },
+        {
+          "ingredientId": "ingredient-water",
+          "quantity": 120,
+          "unit": "ml",
+          "form": "water",
+          "sourceFoodId": null,
+          "sourceValues": [],
+          "contribution": [],
+          "includedInNutrition": false,
+          "exclusionReason": "1/2 cup; excluded from nutrient totals"
+        },
+        {
+          "ingredientId": "ingredient-cardamom",
+          "quantity": 1,
+          "unit": "g",
+          "form": "cardamom",
+          "sourceFoodId": 170919,
+          "sourceFoodDescription": "Spices, cardamom",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 311,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 10.8,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 6.7,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 68.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 28,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 3.11,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.11,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.07,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0.69,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0.28,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "powdered, 1/4 tsp"
+        },
+        {
+          "ingredientId": "ingredient-cloves",
+          "quantity": 0.3,
+          "unit": "g",
+          "form": "cloves",
+          "sourceFoodId": 171321,
+          "sourceFoodDescription": "Spices, cloves, ground",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 274,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 5.97,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 13,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 65.5,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 33.9,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 0.82,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0.02,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 0.04,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0.2,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0.1,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "powdered, a pinch"
+        },
+        {
+          "ingredientId": "ingredient-vegetable-oil",
+          "quantity": 230,
+          "unit": "g",
+          "form": "vegetable oil",
+          "sourceFoodId": 172336,
+          "sourceFoodDescription": "Oil, canola",
+          "sourceFoodDataType": "SR Legacy",
+          "sourceValues": [
+            {
+              "nutrient": "energy",
+              "amount": 884,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 100,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "contribution": [
+            {
+              "nutrient": "energy",
+              "amount": 2033.2,
+              "unit": "kcal"
+            },
+            {
+              "nutrient": "protein",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "total fat",
+              "amount": 230,
+              "unit": "g"
+            },
+            {
+              "nutrient": "carbohydrate",
+              "amount": 0,
+              "unit": "g"
+            },
+            {
+              "nutrient": "dietary fibre",
+              "amount": 0,
+              "unit": "g"
+            }
+          ],
+          "includedInNutrition": true,
+          "adaptation": "for deep frying, from 250 ml"
+        }
+      ],
+      "totals": [
+        {
+          "nutrient": "energy",
+          "amount": 573.77,
+          "unit": "kcal"
+        },
+        {
+          "nutrient": "protein",
+          "amount": 1.65,
+          "unit": "g"
+        },
+        {
+          "nutrient": "total fat",
+          "amount": 50.98,
+          "unit": "g"
+        },
+        {
+          "nutrient": "carbohydrate",
+          "amount": 28.28,
+          "unit": "g"
+        },
+        {
+          "nutrient": "dietary fibre",
+          "amount": 0.06,
+          "unit": "g"
+        }
+      ],
+      "limitations": [
+        "Recipe-level values are estimates; cooking yield and moisture changes are not modeled.",
+        "Water and salt are listed as exclusions and contribute nothing to the totals.",
+        "Millilitre quantities are treated as grams; density is not modeled."
+      ]
     }
   ]
 }

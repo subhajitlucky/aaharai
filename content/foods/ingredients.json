@@ -1739,6 +1739,84 @@
       "substitutionIds": [],
       "form": "active dry yeast",
       "baseIngredient": false
+    },
+    {
+      "id": "ingredient-saffron",
+      "canonicalName": "Saffron",
+      "regionalNames": [
+        {
+          "name": "Kesar",
+          "region": "Kashmir"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "dried strands",
+      "baseIngredient": false,
+      "nutritionNote": "The selected USDA SR Legacy row is dried strands; values are per 100 g as published in that release."
+    },
+    {
+      "id": "ingredient-raisins",
+      "canonicalName": "Raisins",
+      "regionalNames": [
+        {
+          "name": "Mishmish",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "golden seedless",
+      "baseIngredient": false,
+      "nutritionNote": "The selected USDA SR Legacy row is golden seedless; values are per 100 g as published in that release."
+    },
+    {
+      "id": "ingredient-dates",
+      "canonicalName": "Dates",
+      "regionalNames": [
+        {
+          "name": "Khajoor",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "dried medjool",
+      "baseIngredient": false,
+      "nutritionNote": "The selected USDA SR Legacy row is dried medjool; values are per 100 g as published in that release."
     }
   ],
   "substitutions": [

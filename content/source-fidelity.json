@@ -232,6 +232,85 @@
         "The source method is retained as a plain finger-millet flour-and-water preparation; the manifest uses the generic raw millet row as a declared proxy for finger millet flour, and the catalog season window is explicitly editorial."
       ],
       "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-kashmiri-pulao",
+      "fidelityId": "fidelity-kashmiri-pulao",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Kashmiri Pulao",
+        "long grain rice",
+        "saffron",
+        "walnut",
+        "cashew"
+      ],
+      "adaptations": [
+        "Source weights are taken as printed; the pinch of turmeric and the salt are normalized to gram weights for repeatable scaling.",
+        "The fried onion is removed after frying and returned as a garnish, matching the source sequence."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-modur-pulao",
+      "fidelityId": "fidelity-modur-pulao",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Modur Pulao",
+        "basmati rice",
+        "saffron",
+        "dry fruits",
+        "ghee"
+      ],
+      "adaptations": [
+        "Source cup and spoon measures (2 cups rice, 2 cups sugar, 1/2 cup ghee, 1/2 tsp spices, 1/2 cup dry fruits) are converted to gram weights.",
+        "Dry coconut slivers are mapped to the registered desiccated coconut ingredient; dried dates are mapped to medjool as the closest registered form."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-pukhlein",
+      "fidelityId": "fidelity-pukhlein",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Pukhlein",
+        "rice flour",
+        "jaggery",
+        "deep frying"
+      ],
+      "adaptations": [
+        "The 1 cup of rice flour and 1/2 cup of jaggery are converted to gram weights.",
+        "Frying oil is counted at the stated quantity; actual absorbed oil is not modeled, so the fat figure is an upper-bound input rather than a measured value."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-sel-roti",
+      "fidelityId": "fidelity-sel-roti",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Sel Roti",
+        "raw rice",
+        "ghee",
+        "deep frying",
+        "Sikkim"
+      ],
+      "adaptations": [
+        "Source measures (1 cup rice, 1/4 cup sugar, 1/3 cup ghee, 1/2 cup water, 1/4 tsp cardamom, 250 ml oil) are converted to gram weights.",
+        "Frying oil is counted at the stated quantity; actual absorbed oil is not modeled, so the fat figure is an upper-bound input rather than a measured value."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
     }
   ]
 }

@@ -18,7 +18,7 @@ describe("sourced recipe loader", () => {
     const ids = recipes.map((recipe) => recipe.id);
     const slugs = recipes.map((recipe) => recipe.slug);
 
-    expect(recipes).toHaveLength(12);
+    expect(recipes).toHaveLength(16);
     expect(new Set(ids).size).toBe(ids.length);
     expect(new Set(slugs).size).toBe(slugs.length);
     expect(titles).toEqual([...titles].sort());

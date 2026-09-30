@@ -47,7 +47,7 @@ describe("Task 3 correction contracts", () => {
     const reviewManifest = readJson("content/reviews/review-evidence.json");
     const entries = reviewManifest.entries as Array<Record<string, unknown>>;
 
-    expect(entries).toHaveLength(12);
+    expect(entries).toHaveLength(16);
     expect(entries.every((entry) => entry.role === "Aaharai AI-assisted source audit")).toBe(true);
     expect(entries.every((entry) => entry.reviewedAt === "2026-09-25")).toBe(true);
     expect(entries.every((entry) => Array.isArray(entry.sourceChecks) && entry.sourceChecks.length > 0)).toBe(true);
@@ -60,7 +60,7 @@ describe("Task 3 correction contracts", () => {
 
     expect(manifest.version).toBe(1);
     expect(manifest.sourceId).toBe("src-usda-fdc-sr-legacy-2018");
-    expect(entries).toHaveLength(12);
+    expect(entries).toHaveLength(16);
     expect(
       entries.every((entry) => Array.isArray(entry.ingredients) && entry.ingredients.length > 0),
     ).toBe(true);
@@ -107,7 +107,7 @@ describe("Task 3 correction contracts", () => {
     const nadia = records.find((record) => record.recipeId === "recipe-odisha-nadia-pura-idli");
     const biryani = records.find((record) => record.recipeId === "recipe-punjab-chicken-biryani");
 
-    expect(records).toHaveLength(12);
+    expect(records).toHaveLength(16);
     expect(nadia?.sourceTerms).not.toContain("jaggery");
     expect(nadia?.sourceTerms).toContain("sugar");
     expect(nadia?.sourceTerms).toContain("brown sugar");

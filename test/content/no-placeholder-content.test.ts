@@ -127,7 +127,7 @@ describe("public recipe content", () => {
 
 describe("recipe inventory", () => {
   it("has a public seed catalog and keeps templates out of it", () => {
-    expect(publicRecipeFiles.length).toBe(12);
+    expect(publicRecipeFiles.length).toBe(16);
     expect(publicRecipeFiles).not.toContain("_TEMPLATE.mdx");
     expect(publicRecipeFiles.every((file) => basename(file, ".mdx") === file.slice(0, -4))).toBe(true);
   });
