@@ -64,7 +64,7 @@ export async function POST(request: Request) {
     
     return NextResponse.json({ remedy: JSON.parse(cleanJson) });
 
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to find remedy" }, { status: 500 });
   }
 }

@@ -19,15 +19,21 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
+        const authUser = user as typeof user & { prakriti?: string | null };
         token.id = user.id;
-        token.prakriti = (user as any).prakriti;
+        token.prakriti = authUser.prakriti;
       }
       return token;
     },
     async session({ session, token }) {
       if (session.user) {
-        (session.user as any).id = token.id;
-        (session.user as any).prakriti = token.prakriti;
+        const sessionUser = session.user as typeof session.user & {
+          id?: string;
+          prakriti?: string | null;
+        };
+        sessionUser.id = typeof token.id === "string" ? token.id : undefined;
+        sessionUser.prakriti =
+          typeof token.prakriti === "string" ? token.prakriti : null;
       }
       return session;
     },

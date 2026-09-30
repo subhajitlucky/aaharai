@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "recipeId": "recipe-bengal-khichuri",
+      "evidenceId": "review-bengal-khichuri",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source cup and spoon measures are normalized to gram weights; the listed vegetables and spice sequence are retained."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-bihar-dal-pitha",
+      "evidenceId": "review-bihar-dal-pitha",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the rice-flour shell and pulse filling remain separate. The manifest uses the USDA white rice flour row and the mature chickpea row as the declared Bengal gram dal/flour proxies."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-gujarati-dhokla",
+      "evidenceId": "review-gujarati-dhokla",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the roast, grind, ferment, and steam sequence is retained."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-karnataka-vangi-bhaat",
+      "evidenceId": "review-karnataka-vangi-bhaat",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the roasted spice powder and rice-folding sequence are retained."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-kerala-appam",
+      "evidenceId": "review-kerala-appam",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the fermented batter and appam-pan shaping are retained. The USDA short-grain raw white-rice row is used for both the white-rice and cooked-rice portions, and the granulated-sugar row is retained for the source sugar."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-madhya-pradesh-peas-carrot-pulao",
+      "evidenceId": "review-madhya-pradesh-peas-carrot-pulao",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the separate vegetable frying and covered rice cooking are retained."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-maharashtra-thalipeeth",
+      "evidenceId": "review-maharashtra-thalipeeth",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the four-flour dough and shallow griddle cooking are retained. The manifest uses the USDA white rice flour row and the mature chickpea row as the declared rice-flour and gram-flour proxies; the generic millet row represents bajra flour."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-odisha-nadia-pura-idli",
+      "evidenceId": "review-odisha-nadia-pura-idli",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the source lists sugar and brown sugar, while this catalog uses jaggery as a declared adaptation for the coconut topping. The USDA granulated-sugar row is used as the jaggery nutrition proxy."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-punjab-chicken-biryani",
+      "evidenceId": "review-punjab-chicken-biryani",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the source's biryani masala is represented by the catalog's garam masala as a declared seasoning deviation, and black cardamom is not separately included. Green cardamom is retained; food colour and Kewra water are explicitly omitted rather than replaced."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-south-indian-jain-dosa",
+      "evidenceId": "review-south-indian-jain-dosa",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-jain-dosa-mit-2020",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "The source cup measures are explicitly normalized from 3 cups white rice and 1 cup urad dal to the listed 300 g and 150 g weights; the separate soak, grind, overnight ferment, and thin griddle-cooking sequence is retained. The source post's main-course category is retained, while the everyday occasion is an editorial catalog label."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The MIT-licensed source post is cited for the dish, ingredient list, and method facts; this record is an independent adaptation with attribution and no copied source prose."
+      ]
+    },
+    {
+      "recipeId": "recipe-tamil-pongal",
+      "evidenceId": "review-tamil-pongal",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-rice-foods-2015",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the separate rice-and-dal cooking and ghee temper are retained. The source's desiccated coconut is retained as the listed form, and peppercorns/fresh pepper are represented by the declared black-pepper row."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    },
+    {
+      "recipeId": "recipe-uttarakhand-madue-ki-bari",
+      "evidenceId": "review-uttarakhand-madue-ki-bari",
+      "role": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25",
+      "sourceChecks": [
+        {
+          "sourceId": "src-icar-uttarakhand-cuisine-2023",
+          "check": "Citation, dish identity, cited ingredient forms, regional attribution, and method-level facts were checked against the registered source."
+        },
+        {
+          "sourceId": "src-usda-fdc-sr-legacy-2018",
+          "check": "USDA FoodData Central licensing, SR Legacy release, exact FDC food descriptions, IDs, and nutrient values were checked against the official release."
+        }
+      ],
+      "adaptations": [
+        "The source method is retained as a plain finger-millet flour-and-water preparation; the manifest uses the generic raw millet row as a declared proxy for finger millet flour, and the catalog season window is explicitly editorial."
+      ],
+      "nutritionCalculationCheck": {
+        "manifestVersion": 1,
+        "status": "recomputed",
+        "checkedAt": "2026-09-25"
+      },
+      "limitations": [
+        "Recipe-level nutrition is an estimate; cooking yield and household variation were not measured.",
+        "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+      ]
+    }
+  ]
+}

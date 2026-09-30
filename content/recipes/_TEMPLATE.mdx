@@ -1,51 +1,82 @@
 ---
-# Copy this file to <slug>.mdx and fill EVERY field. Files starting with _ are
-# skipped by validation and never built. The build FAILS if any field is missing,
-# because incomplete provenance is worse than no recipe.
-slug: your-recipe-slug
-title: Dish Name in English
+id: "recipe-<slug>"
+slug: "<slug>"
+title: "<dish title>"
 nativeName:
-  text: খাবারের নাম
-  script: bengali
-transliteration: khabarer nam
-dialectVariant: Bangal / Ghoti / household style (optional)
+  text: "<source-printed name>"
+  script: "<script or latin>"
+transliteration: "<optional transliteration>"
+dialectVariant: "<optional regional form>"
 region:
-  state: West Bengal
-  subRegion: district or sub-region (optional)
-  community: community or household tradition (optional)
-languageNote: anything a reader needs about the dialect/terms (optional)
-lineage:
-  sourceType: oral # oral | family-manuscript | community-cookbook
-  entries:
-    - name: Person who taught it
-      relation: grandmother
-      place: Town, District
-      era: 1950s-1990s
-  publishedRef: only if sourceType is community-cookbook (optional)
-verification:
-  tier: family-archive # family-archive | community-verified
-  verifierName: who checked it
-  verifiedAt: "2026-01-01"
+  state: "<state or union territory>"
+  district: "<optional district>"
+  subRegion: "<optional sub-region>"
+  community: "<optional source-supported community>"
+languageNote: "<language or naming note>"
 occasions:
-  - everyday # add festival names, lifecycle events, vrat etc.
-seasonalWindow: e.g. October-January (optional)
-dietaryFrame: satvik # satvik | jain | no-onion-garlic | non-veg | vegan | vegetarian
+  - "<source-supported occasion or everyday>"
+seasonWindow:
+  calendar: "same-year"
+  startMonth: 1
+  endMonth: 12
 ingredients:
-  - item: ingredient name
-    qty: 1 cup
-    note: preparation note (optional)
-    nativeTerm: local term (optional)
+  - ingredientId: "ingredient-<registered-id>"
+    quantity: "<positive number>"
+    unit: "g"
+    note: "<preparation note>"
+allergenIds: []
+nutrition:
+  servingLabel: "<serving label>"
+  values:
+    - nutrient: "energy"
+      amount: "<number>"
+      unit: "kcal"
+      sourceId: "src-<registered-composition-source>"
+      estimated: true
+    - nutrient: "protein"
+      amount: "<number>"
+      unit: "g"
+      sourceId: "src-<registered-composition-source>"
+      estimated: true
+sourceIds:
+  - "src-<registered-recipe-source>"
+provenance:
+  claim: "source-cited"
+verification:
+  tier: "source-cited"
+  verifierName: "Aaharai AI-assisted source audit"
+  verifiedAt: "2026-09-25"
+reviewEvidenceId: "review-<slug>"
+sourceFidelityId: "fidelity-<slug>"
+trustLabel: "source-cited"
+mealCategory: "main-course"
+nutritionManifestVersion: 1
+totalTimeMinutes: 1
+difficulty: "easy"
+substitutionIds:
+  - "sub-<registered-substitution>"
+costTier: "low"
+dietaryTags:
+  - "vegetarian"
+seasonTags:
+  - "all-season"
 steps:
-  - text: What to do.
-    tip: why this step matters (optional)
-    technique: named technique (optional)
-time:
-  prepMinutes: 15
-  cookMinutes: 30
-servings: 4
-variations: [] # or [{ label: ..., note: ... }]
-authenticityNotes: what this is NOT; common homogenized mistakes (optional)
-heroImage: /images/recipes/slug/hero.jpg (optional)
+  - text: "<one sourced or clearly labeled editorial method step>"
+    tip: "<optional method explanation>"
+    technique: "<optional technique>"
+servings: 1
+variations:
+  - label: "<variation label>"
+    note: "<what changes and why it is not identical>"
+authenticityNotes: "<regional scope, source boundary, and any estimate or adaptation statement>"
 ---
 
-# Optional prose body: chef notes, stories from the lineage holder.
+# Authoring format
+
+Copy this file to `<slug>.mdx` and replace every angle-bracket token before publication. A file containing any angle-bracket token is an incomplete draft and must not enter the public catalog.
+
+Use the shared sourced recipe contract. Keep the filename stem equal to `slug`, choose one `trustLabel` that matches `provenance`, and list only source IDs that exist in `content/sources/index.json`. Do not use `community-tested` unless a real community test occurred and is documented.
+
+Use normalized ingredient IDs from `content/foods/ingredients.json`. Every nutrition number needs a registered source ID and an explicit `estimated` value. State the calculation basis and keep estimates honest when a recipe has not been laboratory measured.
+
+Record the state or union territory, a month-based season window, method, variations, substitutions, cost tier, dietary tags, and the actual review date in the frontmatter. The body is plain text: it is not an MDX execution surface.

@@ -1,0 +1,1786 @@
+{
+  "version": 1,
+  "ingredients": [
+    {
+      "id": "ingredient-rice",
+      "canonicalName": "Milled rice",
+      "regionalNames": [
+        {
+          "name": "Chawal",
+          "region": "North India"
+        },
+        {
+          "name": "Rice",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "raw milled white rice",
+      "baseIngredient": true,
+      "nutritionNote": "The selected USDA SR Legacy row is short-grain raw white rice; the catalog's generic milled white-rice form is a declared grain-length proxy."
+    },
+    {
+      "id": "ingredient-brown-rice",
+      "canonicalName": "Brown rice",
+      "regionalNames": [
+        {
+          "name": "Brown rice",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "raw brown rice",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-rice-flour",
+      "canonicalName": "Rice flour",
+      "regionalNames": [
+        {
+          "name": "Chawal ki atta",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "white rice flour",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe form is retained; the manifest records the exact USDA white-rice-flour food form."
+    },
+    {
+      "id": "ingredient-ragi",
+      "canonicalName": "Finger millet",
+      "regionalNames": [
+        {
+          "name": "Ragi",
+          "region": "Karnataka"
+        },
+        {
+          "name": "Madua",
+          "region": "Uttarakhand"
+        },
+        {
+          "name": "Mandua",
+          "region": "Odisha"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "finger millet flour",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe uses finger millet flour; USDA SR Legacy has only a generic raw millet record, so the manifest records that generic millet food as a declared proxy."
+    },
+    {
+      "id": "ingredient-bajra",
+      "canonicalName": "Pearl millet",
+      "regionalNames": [
+        {
+          "name": "Bajra",
+          "region": "Rajasthan"
+        },
+        {
+          "name": "Bajri",
+          "region": "Maharashtra"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "pearl millet flour",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe uses pearl millet flour; USDA SR Legacy has only a generic raw millet record, so the manifest records that generic millet food as a declared proxy."
+    },
+    {
+      "id": "ingredient-wheat-flour",
+      "canonicalName": "Whole wheat flour",
+      "regionalNames": [
+        {
+          "name": "Atta",
+          "region": "North India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "nut-free"
+      ],
+      "allergenIds": [
+        "wheat",
+        "gluten"
+      ],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "whole wheat flour",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-bengal-gram-flour",
+      "canonicalName": "Bengal gram flour",
+      "regionalNames": [
+        {
+          "name": "Besan",
+          "region": "North India"
+        },
+        {
+          "name": "Gram flour",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "ground Bengal gram flour",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe form is retained; the manifest uses the USDA mature chickpea record as a declared flour proxy."
+    },
+    {
+      "id": "ingredient-bengal-gram-dal",
+      "canonicalName": "Split Bengal gram",
+      "regionalNames": [
+        {
+          "name": "Chana dal",
+          "region": "North India"
+        },
+        {
+          "name": "Bengal gram dal",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "split Bengal gram",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe form is retained; the manifest uses the USDA mature chickpea record as a declared split-pulse proxy."
+    },
+    {
+      "id": "ingredient-green-gram-dal",
+      "canonicalName": "Split green gram",
+      "regionalNames": [
+        {
+          "name": "Moong dal",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "split green gram",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe form is retained; the manifest uses the USDA mature mung-bean record as a declared split-pulse proxy."
+    },
+    {
+      "id": "ingredient-black-gram-dal",
+      "canonicalName": "Split black gram",
+      "regionalNames": [
+        {
+          "name": "Urad dal",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "split black gram",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe form is retained; the manifest uses the USDA mature black-bean record as a declared split-pulse proxy."
+    },
+    {
+      "id": "ingredient-red-gram-dal",
+      "canonicalName": "Split pigeon pea",
+      "regionalNames": [
+        {
+          "name": "Toor dal",
+          "region": "Gujarat"
+        },
+        {
+          "name": "Arhar dal",
+          "region": "Maharashtra"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "split pigeon pea",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-bottle-gourd",
+      "canonicalName": "Bottle gourd",
+      "regionalNames": [
+        {
+          "name": "Dudhi",
+          "region": "Gujarat"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "bottle gourd",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-pumpkin",
+      "canonicalName": "Pumpkin",
+      "regionalNames": [
+        {
+          "name": "Dudhi",
+          "region": "Maharashtra"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "pumpkin",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-eggplant",
+      "canonicalName": "Eggplant",
+      "regionalNames": [
+        {
+          "name": "Brinjal",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "eggplant",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-tomato",
+      "canonicalName": "Tomato",
+      "regionalNames": [
+        {
+          "name": "Tamatar",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "tomato",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-potato",
+      "canonicalName": "Potato",
+      "regionalNames": [
+        {
+          "name": "Aloo",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "potato",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-peas",
+      "canonicalName": "Fresh green peas",
+      "regionalNames": [
+        {
+          "name": "Matar",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "fresh green peas",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-cauliflower",
+      "canonicalName": "Cauliflower",
+      "regionalNames": [
+        {
+          "name": "Phool Gobhi",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "cauliflower",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-spinach",
+      "canonicalName": "Spinach",
+      "regionalNames": [
+        {
+          "name": "Palak",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "spinach",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-bitter-gourd",
+      "canonicalName": "Bitter gourd",
+      "regionalNames": [
+        {
+          "name": "Karela",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "bitter gourd",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-drumstick",
+      "canonicalName": "Drumstick pods",
+      "regionalNames": [
+        {
+          "name": "Sohjne",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "drumstick pods",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-carrot",
+      "canonicalName": "Carrot",
+      "regionalNames": [
+        {
+          "name": "Gajar",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "carrot",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-onion",
+      "canonicalName": "Onion",
+      "regionalNames": [
+        {
+          "name": "Pyaaz",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "onion",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-garlic",
+      "canonicalName": "Garlic",
+      "regionalNames": [
+        {
+          "name": "Lehsun",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "garlic",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-ginger",
+      "canonicalName": "Fresh ginger",
+      "regionalNames": [
+        {
+          "name": "Adrak",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "fresh ginger",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-green-chili",
+      "canonicalName": "Green chili",
+      "regionalNames": [
+        {
+          "name": "Hari mirch",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "green chili",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-red-chili",
+      "canonicalName": "Red chili",
+      "regionalNames": [
+        {
+          "name": "Lal mirch",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "red chili",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-coriander-leaves",
+      "canonicalName": "Coriander leaves",
+      "regionalNames": [
+        {
+          "name": "Dhania",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "coriander leaves",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-curry-leaves",
+      "canonicalName": "Curry leaves",
+      "regionalNames": [
+        {
+          "name": "Kadi patta",
+          "region": "South India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [],
+      "substitutionIds": [],
+      "form": "curry leaves",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-mint-leaves",
+      "canonicalName": "Mint leaves",
+      "regionalNames": [
+        {
+          "name": "Pudina",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [],
+      "substitutionIds": [],
+      "form": "mint leaves",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-fresh-coconut-kernel",
+      "canonicalName": "Fresh coconut kernel",
+      "regionalNames": [
+        {
+          "name": "Nariyal",
+          "region": "South India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [
+        {
+          "id": "other",
+          "label": "coconut"
+        }
+      ],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [
+        "sub-fresh-coconut-coconut-milk",
+        "sub-fresh-coconut-desiccated-coconut"
+      ],
+      "form": "fresh grated coconut kernel",
+      "baseIngredient": true,
+      "nutritionNote": "The manifest uses the exact USDA raw coconut-meat record."
+    },
+    {
+      "id": "ingredient-desiccated-coconut",
+      "canonicalName": "Desiccated coconut",
+      "form": "dried desiccated coconut kernel",
+      "regionalNames": [
+        {
+          "name": "Nariyal poori",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [
+        {
+          "id": "other",
+          "label": "coconut"
+        }
+      ],
+      "defaultUnit": "g",
+      "baseIngredient": false,
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "nutritionNote": "The manifest uses the exact USDA desiccated, unsweetened coconut-meat record.",
+      "substitutionIds": [
+        "sub-desiccated-coconut-coconut-milk"
+      ]
+    },
+    {
+      "id": "ingredient-coconut-milk",
+      "canonicalName": "Coconut milk",
+      "regionalNames": [
+        {
+          "name": "Nariyal milk",
+          "region": "South India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [
+        {
+          "id": "other",
+          "label": "coconut"
+        }
+      ],
+      "defaultUnit": "ml",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "liquid expressed from grated coconut",
+      "baseIngredient": false
+    },
+    {
+      "id": "ingredient-cashew",
+      "canonicalName": "Cashew nut",
+      "regionalNames": [
+        {
+          "name": "Kaju",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free"
+      ],
+      "allergenIds": [
+        "tree-nuts"
+      ],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "cashew nut",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-walnut",
+      "canonicalName": "Walnut",
+      "regionalNames": [
+        {
+          "name": "Akhrot",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free"
+      ],
+      "allergenIds": [
+        "tree-nuts"
+      ],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "walnut",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-almond",
+      "canonicalName": "Almond",
+      "regionalNames": [
+        {
+          "name": "Badam",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free"
+      ],
+      "allergenIds": [
+        "tree-nuts"
+      ],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "almond",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-jaggery",
+      "canonicalName": "Cane jaggery",
+      "regionalNames": [
+        {
+          "name": "Jaggery",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "cane jaggery",
+      "baseIngredient": true,
+      "nutritionNote": "The ICAR source lists sugar and brown sugar; this catalog uses jaggery as a declared adaptation, and USDA SR Legacy has no cane-jaggery record, so the manifest uses granulated sugar as a declared estimated proxy."
+    },
+    {
+      "id": "ingredient-sugar",
+      "canonicalName": "Sugar",
+      "regionalNames": [
+        {
+          "name": "Cheeni",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "sugar",
+      "baseIngredient": true,
+      "nutritionNote": "The manifest uses the exact USDA granulated-sugar record."
+    },
+    {
+      "id": "ingredient-milk",
+      "canonicalName": "Cow milk",
+      "regionalNames": [
+        {
+          "name": "Doodh",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegetarian",
+        "nut-free"
+      ],
+      "allergenIds": [
+        "milk"
+      ],
+      "defaultUnit": "ml",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [
+        "sub-milk-coconut-milk"
+      ],
+      "form": "cow milk",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-yogurt",
+      "canonicalName": "Plain yogurt",
+      "regionalNames": [
+        {
+          "name": "Dahi",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegetarian",
+        "nut-free"
+      ],
+      "allergenIds": [
+        "milk"
+      ],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [
+        "sub-yogurt-coconut-milk"
+      ],
+      "form": "plain whole-milk yogurt",
+      "baseIngredient": false,
+      "nutritionNote": "The recipe form is retained; the manifest uses the exact USDA plain whole-milk yogurt record."
+    },
+    {
+      "id": "ingredient-buttermilk",
+      "canonicalName": "Buttermilk",
+      "regionalNames": [
+        {
+          "name": "Chaas",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegetarian",
+        "nut-free"
+      ],
+      "allergenIds": [
+        "milk"
+      ],
+      "defaultUnit": "ml",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "cultured buttermilk",
+      "baseIngredient": false,
+      "nutritionNote": "The recipe form is retained; the manifest uses the exact USDA cultured buttermilk record."
+    },
+    {
+      "id": "ingredient-butter",
+      "canonicalName": "Butter",
+      "regionalNames": [
+        {
+          "name": "Makhan",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegetarian",
+        "nut-free"
+      ],
+      "allergenIds": [
+        "milk"
+      ],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "butter",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe form is retained; the manifest uses USDA clarified butter as a declared dairy-fat proxy because the selected SR record does not provide a complete butter panel."
+    },
+    {
+      "id": "ingredient-ghee",
+      "canonicalName": "Ghee",
+      "regionalNames": [
+        {
+          "name": "Ghee",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegetarian",
+        "nut-free"
+      ],
+      "allergenIds": [
+        "milk"
+      ],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "ghee",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-chicken",
+      "canonicalName": "Chicken meat, skinless",
+      "regionalNames": [
+        {
+          "name": "Murgh",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "non-veg",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "chicken meat, skinless",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-mustard-oil",
+      "canonicalName": "Mustard oil",
+      "regionalNames": [
+        {
+          "name": "Sarson ka tel",
+          "region": "North India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "ml",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "mustard oil",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe form is retained; the manifest uses USDA canola oil as a declared neutral-oil proxy."
+    },
+    {
+      "id": "ingredient-sesame-oil",
+      "canonicalName": "Sesame oil",
+      "regionalNames": [
+        {
+          "name": "Til ka tel",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free"
+      ],
+      "allergenIds": [
+        "sesame"
+      ],
+      "defaultUnit": "ml",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "sesame oil",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-peanut-oil",
+      "canonicalName": "Peanut oil",
+      "regionalNames": [
+        {
+          "name": "Groundnut oil",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free"
+      ],
+      "allergenIds": [
+        "peanut"
+      ],
+      "defaultUnit": "ml",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "peanut oil",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe form is retained; the manifest uses USDA canola oil as a declared neutral-oil proxy."
+    },
+    {
+      "id": "ingredient-vegetable-oil",
+      "canonicalName": "Vegetable oil",
+      "regionalNames": [
+        {
+          "name": "Cooking oil",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "ml",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "vegetable oil",
+      "baseIngredient": true,
+      "nutritionNote": "The recipe form is retained; the manifest uses USDA canola oil as a declared neutral-oil proxy."
+    },
+    {
+      "id": "ingredient-turmeric",
+      "canonicalName": "Turmeric powder",
+      "regionalNames": [
+        {
+          "name": "Haldi",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "turmeric powder",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-cumin",
+      "canonicalName": "Cumin seeds",
+      "regionalNames": [
+        {
+          "name": "Jeera",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "cumin seeds",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-coriander-seed",
+      "canonicalName": "Coriander seed",
+      "regionalNames": [
+        {
+          "name": "Dhania beera",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "coriander seed",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-cardamom",
+      "canonicalName": "Cardamom",
+      "regionalNames": [
+        {
+          "name": "Elaichi",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "cardamom",
+      "baseIngredient": true,
+      "nutritionNote": "The Biryani source specifies green cardamom; black cardamom is not separately included in this catalog record."
+    },
+    {
+      "id": "ingredient-cloves",
+      "canonicalName": "Cloves",
+      "regionalNames": [
+        {
+          "name": "Laung",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "cloves",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-cinnamon",
+      "canonicalName": "Cinnamon",
+      "regionalNames": [
+        {
+          "name": "Dalchini",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "cinnamon",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-black-pepper",
+      "canonicalName": "Black pepper",
+      "regionalNames": [
+        {
+          "name": "Kali mirch",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "black pepper",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-bay-leaf",
+      "canonicalName": "Bay leaf",
+      "regionalNames": [
+        {
+          "name": "Tej patta",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "bay leaf",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-mustard-seeds",
+      "canonicalName": "Mustard seed",
+      "regionalNames": [
+        {
+          "name": "Rai",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "mustard seed",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-sesame-seeds",
+      "canonicalName": "Sesame seed",
+      "regionalNames": [
+        {
+          "name": "Til",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free"
+      ],
+      "allergenIds": [
+        "sesame"
+      ],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "sesame seed",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-asafoetida",
+      "canonicalName": "Asafoetida",
+      "regionalNames": [
+        {
+          "name": "Hing",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [],
+      "substitutionIds": [],
+      "form": "asafoetida",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-mace",
+      "canonicalName": "Mace",
+      "regionalNames": [
+        {
+          "name": "Javitri",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "mace",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-garam-masala",
+      "canonicalName": "Garam masala",
+      "regionalNames": [
+        {
+          "name": "Garam masala",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [],
+      "substitutionIds": [],
+      "form": "compound garam masala blend",
+      "baseIngredient": false,
+      "nutritionNote": "The Biryani source names biryani masala separately; this catalog uses garam masala as a declared seasoning deviation, and black cardamom is not included."
+    },
+    {
+      "id": "ingredient-tamarind",
+      "canonicalName": "Tamarind",
+      "regionalNames": [
+        {
+          "name": "Chingari",
+          "region": "South India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "tamarind",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-lemon-juice",
+      "canonicalName": "Lemon juice",
+      "regionalNames": [
+        {
+          "name": "Nimbu ka ras",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "ml",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "lemon juice",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-salt",
+      "canonicalName": "Salt",
+      "regionalNames": [
+        {
+          "name": "Namak",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "table salt",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-water",
+      "canonicalName": "Water",
+      "regionalNames": [
+        {
+          "name": "Paani",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "ml",
+      "nutritionSourceIds": [],
+      "substitutionIds": [],
+      "form": "water",
+      "baseIngredient": true
+    },
+    {
+      "id": "ingredient-baking-soda",
+      "canonicalName": "Baking soda",
+      "regionalNames": [
+        {
+          "name": "Khamira soda",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "baking leavening powder",
+      "baseIngredient": false
+    },
+    {
+      "id": "ingredient-yeast",
+      "canonicalName": "Yeast",
+      "regionalNames": [
+        {
+          "name": "Droj",
+          "region": "India"
+        }
+      ],
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free",
+        "gluten-free",
+        "nut-free"
+      ],
+      "allergenIds": [],
+      "defaultUnit": "g",
+      "nutritionSourceIds": [
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "substitutionIds": [],
+      "form": "active dry yeast",
+      "baseIngredient": false
+    }
+  ],
+  "substitutions": [
+    {
+      "id": "sub-fresh-coconut-coconut-milk",
+      "fromIngredientId": "ingredient-fresh-coconut-kernel",
+      "toIngredientIds": [
+        "ingredient-coconut-milk"
+      ],
+      "note": "Coconut milk is a liquid preparation and is not a gram-for-gram replacement for fresh grated kernel."
+    },
+    {
+      "id": "sub-fresh-coconut-desiccated-coconut",
+      "fromIngredientId": "ingredient-fresh-coconut-kernel",
+      "toIngredientIds": [
+        "ingredient-desiccated-coconut"
+      ],
+      "note": "Desiccated coconut is a preserved preparation with different moisture and is not a one-for-one fresh-kernel substitution."
+    },
+    {
+      "id": "sub-desiccated-coconut-coconut-milk",
+      "fromIngredientId": "ingredient-desiccated-coconut",
+      "toIngredientIds": [
+        "ingredient-coconut-milk"
+      ],
+      "note": "Coconut milk changes the liquid and moisture profile of desiccated coconut and is not a one-for-one replacement."
+    },
+    {
+      "id": "sub-milk-coconut-milk",
+      "fromIngredientId": "ingredient-milk",
+      "toIngredientIds": [
+        "ingredient-coconut-milk"
+      ],
+      "note": "Coconut milk changes flavor, thickness, and allergen profile; it is not nutritionally identical to milk."
+    },
+    {
+      "id": "sub-yogurt-coconut-milk",
+      "fromIngredientId": "ingredient-yogurt",
+      "toIngredientIds": [
+        "ingredient-coconut-milk"
+      ],
+      "note": "Coconut milk is not cultured yogurt and changes thickness, flavor, and culture characteristics."
+    }
+  ]
+}

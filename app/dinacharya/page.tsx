@@ -4,11 +4,17 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sunrise, Moon, Clock, Sparkles, Layout, ChevronRight, CheckCircle2 } from "lucide-react";
 
+type Ritual = {
+  time: string;
+  activity: string;
+  description: string;
+};
+
 export default function DinacharyaPage() {
   const [wakeUpTime, setWakeUpTime] = useState("06:00");
   const [dosha, setDosha] = useState("Pitta");
   const [loading, setLoading] = useState(false);
-  const [rituals, setRituals] = useState<any[] | null>(null);
+  const [rituals, setRituals] = useState<Ritual[] | null>(null);
   const [isSaved, setIsSaved] = useState(false);
 
   // Sync with localStorage on mount
@@ -54,7 +60,7 @@ export default function DinacharyaPage() {
     <div className="max-w-5xl mx-auto px-6 py-12">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Daily <span className="text-turmeric-700">Rituals</span></h1>
-        <p className="text-lg text-charcoal/60 italic">"He who follows Dinacharya lives for 100 years, free from disease." — Charaka Samhita</p>
+        <p className="text-lg text-charcoal/60 italic">“He who follows Dinacharya lives for 100 years, free from disease.” — Charaka Samhita</p>
       </div>
 
       <div className="grid lg:grid-cols-5 gap-12">
@@ -116,7 +122,7 @@ export default function DinacharyaPage() {
               Brahma Muhurta
             </h3>
             <p className="text-sm text-charcoal/60 leading-relaxed">
-              The period 1.5 hours before sunrise is when the air is charged with 'Prana'. Waking then balances all three Doshas instantly.
+              The period 1.5 hours before sunrise is when the air is charged with ‘Prana’. Waking then balances all three Doshas instantly.
             </p>
           </div>
         </div>

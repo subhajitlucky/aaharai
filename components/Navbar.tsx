@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { Leaf, Search, User, BarChart3, LogOut, LayoutDashboard, Sunrise, Camera, Stethoscope, BookOpen, CookingPot } from "lucide-react";
 import { clsx } from "clsx";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -23,7 +22,7 @@ export default function Navbar() {
   const { data: session, status } = useSession();
 
   return (
-    <nav className="fixed top-6 left-0 right-0 z-50 px-4">
+    <nav aria-label="Primary navigation" className="fixed top-6 left-0 right-0 z-50 px-4">
       <div className="max-w-5xl mx-auto glass-panel rounded-full px-6 py-3 flex items-center justify-between shadow-2xl shadow-charcoal/5">
         
         {/* Logo */}

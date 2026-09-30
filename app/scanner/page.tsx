@@ -1,15 +1,24 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Camera, Sparkles, CheckCircle2, Info, Bookmark, Save } from "lucide-react";
+import { Camera, Sparkles, CheckCircle2, Info, Save } from "lucide-react";
 import { useSession } from "next-auth/react";
+
+type FoodAnalysis = {
+  score: number;
+  category: string;
+  breakdown: string;
+  advice: string;
+  items?: string[];
+};
 
 export default function ScannerPage() {
   const { data: session } = useSession();
   const [image, setImage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [analysis, setAnalysis] = useState<any>(null);
+  const [analysis, setAnalysis] = useState<FoodAnalysis | null>(null);
   const [isSaved, setIsSaved] = useState(false);
   const [saving, setSaving] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -63,7 +72,7 @@ export default function ScannerPage() {
         await fetch("/api/log-food", {
           method: "POST",
           body: JSON.stringify({
-            userId: (session.user as any).id,
+            userId: (session.user as { id?: string }).id,
             foodName: analysis.items?.[0] || "Ayurvedic Meal",
             score: analysis.score,
             category: analysis.category
@@ -96,7 +105,14 @@ export default function ScannerPage() {
             className="aspect-square bg-white border-4 border-dashed border-charcoal/5 rounded-[3rem] flex flex-col items-center justify-center cursor-pointer hover:border-clay/20 hover:bg-clay/5 transition-all overflow-hidden relative group"
           >
             {image ? (
-              <img src={image} alt="Food" className="w-full h-full object-cover transition-transform group-hover:scale-105" />
+              <Image
+                src={image}
+                alt="Food"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform group-hover:scale-105"
+                unoptimized
+              />
             ) : (
               <div className="text-center p-8">
                 <div className="w-16 h-16 bg-sand rounded-full flex items-center justify-center mx-auto mb-4">

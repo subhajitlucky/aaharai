@@ -1,0 +1,237 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "recipeId": "recipe-bengal-khichuri",
+      "fidelityId": "fidelity-bengal-khichuri",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Khichuri",
+        "rice",
+        "green gram",
+        "ghee",
+        "whole spices"
+      ],
+      "adaptations": [
+        "Source cup and spoon measures are normalized to gram weights; the listed vegetables and spice sequence are retained."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-bihar-dal-pitha",
+      "fidelityId": "fidelity-bihar-dal-pitha",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Dal Pitha",
+        "rice flour",
+        "Bengal gram dal",
+        "steaming"
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the rice-flour shell and pulse filling remain separate. The manifest uses the USDA white rice flour row and the mature chickpea row as the declared Bengal gram dal/flour proxies."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-gujarati-dhokla",
+      "fidelityId": "fidelity-gujarati-dhokla",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Dhokla",
+        "rice",
+        "split black gram",
+        "yogurt",
+        "steaming"
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the roast, grind, ferment, and steam sequence is retained."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-karnataka-vangi-bhaat",
+      "fidelityId": "fidelity-karnataka-vangi-bhaat",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Vangi Bhaat",
+        "brinjal",
+        "rice",
+        "sesame oil",
+        "roasted spice powder"
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the roasted spice powder and rice-folding sequence are retained."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-kerala-appam",
+      "fidelityId": "fidelity-kerala-appam",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Appam",
+        "white rice",
+        "coconut",
+        "yeast",
+        "cooked rice",
+        "sugar"
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the fermented batter and appam-pan shaping are retained. The USDA short-grain raw white-rice row is used for both the white-rice and cooked-rice portions, and the granulated-sugar row is retained for the source sugar."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-madhya-pradesh-peas-carrot-pulao",
+      "fidelityId": "fidelity-madhya-pradesh-peas-carrot-pulao",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Pulao with Peas and Carrots",
+        "rice",
+        "carrot",
+        "peas",
+        "whole spices"
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the separate vegetable frying and covered rice cooking are retained."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-maharashtra-thalipeeth",
+      "fidelityId": "fidelity-maharashtra-thalipeeth",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Thalipeeth",
+        "rice flour",
+        "bajra flour",
+        "gram flour",
+        "wheat flour"
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the four-flour dough and shallow griddle cooking are retained. The manifest uses the USDA white rice flour row and the mature chickpea row as the declared rice-flour and gram-flour proxies; the generic millet row represents bajra flour."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-odisha-nadia-pura-idli",
+      "fidelityId": "fidelity-odisha-nadia-pura-idli",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Nadia Pura Idli",
+        "rice",
+        "black gram",
+        "coconut",
+        "sugar",
+        "brown sugar",
+        "cardamom"
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the source lists sugar and brown sugar, while this catalog uses jaggery as a declared adaptation for the coconut topping. The USDA granulated-sugar row is used as the jaggery nutrition proxy."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-punjab-chicken-biryani",
+      "fidelityId": "fidelity-punjab-chicken-biryani",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Chicken Biryani",
+        "chicken",
+        "rice",
+        "biryani masala",
+        "garam masala",
+        "green cardamom",
+        "black cardamom",
+        "cloves",
+        "cinnamon"
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the source's biryani masala is represented by the catalog's garam masala as a declared seasoning deviation, and black cardamom is not separately included. Green cardamom is retained; food colour and Kewra water are explicitly omitted rather than replaced."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-south-indian-jain-dosa",
+      "fidelityId": "fidelity-south-indian-jain-dosa",
+      "sourceIds": [
+        "src-jain-dosa-mit-2020",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Dosa",
+        "white rice",
+        "urad dal",
+        "salt"
+      ],
+      "adaptations": [
+        "The source cup measures are explicitly normalized from 3 cups white rice and 1 cup urad dal to the listed 300 g and 150 g weights; the separate soak, grind, overnight ferment, and thin griddle-cooking sequence is retained. The source post's main-course category is retained, while the everyday occasion is an editorial catalog label."
+      ],
+      "boundary": "The MIT-licensed source post is cited for the dish, ingredient list, and method facts; this record is an independent adaptation with attribution and no copied source prose."
+    },
+    {
+      "recipeId": "recipe-tamil-pongal",
+      "fidelityId": "fidelity-tamil-pongal",
+      "sourceIds": [
+        "src-icar-rice-foods-2015",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Pongal",
+        "rice",
+        "green gram",
+        "ghee temper",
+        "desiccated coconut",
+        "peppercorns"
+      ],
+      "adaptations": [
+        "Source measures are normalized to gram weights; the separate rice-and-dal cooking and ghee temper are retained. The source's desiccated coconut is retained as the listed form, and peppercorns/fresh pepper are represented by the declared black-pepper row."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    },
+    {
+      "recipeId": "recipe-uttarakhand-madue-ki-bari",
+      "fidelityId": "fidelity-uttarakhand-madue-ki-bari",
+      "sourceIds": [
+        "src-icar-uttarakhand-cuisine-2023",
+        "src-usda-fdc-sr-legacy-2018"
+      ],
+      "sourceTerms": [
+        "Madue Ki Bari",
+        "finger millet flour",
+        "water"
+      ],
+      "adaptations": [
+        "The source method is retained as a plain finger-millet flour-and-water preparation; the manifest uses the generic raw millet row as a declared proxy for finger millet flour, and the catalog season window is explicitly editorial."
+      ],
+      "boundary": "The ICAR source is cited for the dish and method facts; the public prose is independently written and no source text is reproduced."
+    }
+  ]
+}

@@ -19,6 +19,14 @@ type Question = {
   options: Option[];
 };
 
+type Meal = {
+  name: string;
+  description: string;
+  benefits: string;
+};
+
+type MealPlan = Record<"breakfast" | "lunch" | "dinner", Meal>;
+
 const questions: Question[] = [
   {
     id: 1,
@@ -76,7 +84,7 @@ export default function PrakritiTest() {
   );
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [mealPlan, setMealPlan] = useState<any>(null);
+  const [mealPlan, setMealPlan] = useState<MealPlan | null>(null);
   const [saving, setSaving] = useState(false);
 
   // Load result from localStorage on mount
@@ -118,7 +126,10 @@ export default function PrakritiTest() {
     try {
       await fetch("/api/save-prakriti", {
         method: "POST",
-        body: JSON.stringify({ userId: (session.user as any).id, prakriti: result }),
+        body: JSON.stringify({
+          userId: (session.user as { id?: string }).id,
+          prakriti: result,
+        }),
       });
       alert("Blueprint saved to your sacred profile!");
     } catch (e) {
@@ -290,7 +301,7 @@ export default function PrakritiTest() {
               >
                 <h3 className="text-2xl font-bold text-charcoal text-center mb-6">Your Ancient Satvik Menu</h3>
                 
-                {["breakfast", "lunch", "dinner"].map((meal) => (
+                {(["breakfast", "lunch", "dinner"] as const).map((meal) => (
                   <div key={meal} className="bg-white/50 p-6 rounded-2xl border border-charcoal/5">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="px-3 py-1 rounded-full bg-sage/20 text-sage text-xs font-bold uppercase tracking-wider">{meal}</span>

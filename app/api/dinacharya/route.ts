@@ -60,7 +60,7 @@ export async function POST(request: Request) {
     
     return NextResponse.json(JSON.parse(cleanJson));
 
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to build routine" }, { status: 500 });
   }
 }

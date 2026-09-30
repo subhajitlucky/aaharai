@@ -60,24 +60,35 @@ export async function generateMealPlan(dosha: string) {
   }
 }
 
-function getMockPlan(dosha: string) {
-  // Fallback data so the UI always works
-  const plans: any = {
-    "Vata": {
+type Meal = {
+  name: string;
+  description: string;
+  benefits: string;
+};
+
+type MealPlan = {
+  breakfast: Meal;
+  lunch: Meal;
+  dinner: Meal;
+};
+
+function getMockPlan(dosha: string): MealPlan {
+  const plans: Record<string, MealPlan> = {
+    Vata: {
       breakfast: { name: "Warm Oatmeal with Ghee & Almonds", description: "Cooked oats with a spoonful of ghee, cinnamon, and soaked almonds.", benefits: "Warm, heavy, and oily qualities balance Vata's dryness." },
       lunch: { name: "Kitchari (Moong Dal & Rice)", description: "Basmati rice and moong dal cooked soft with cumin and ginger.", benefits: "Easy to digest and grounding." },
       dinner: { name: "Pumpkin Soup", description: "Creamy pumpkin soup with coconut milk and nutmeg.", benefits: "Soothing and warm for the evening." }
     },
-    "Pitta": {
+    Pitta: {
       breakfast: { name: "Cooling Fruit Bowl", description: "Sweet apples, pears, and pomegranate seeds with mint.", benefits: "Naturally sweet and cooling to reduce body heat." },
       lunch: { name: "Quinoa & Cucumber Salad", description: "Quinoa with cucumber, cilantro, and lime dressing.", benefits: "Light and refreshing without being spicy." },
       dinner: { name: "Steamed Vegetables & Rice", description: "Steamed broccoli, zucchini, and white basmati rice.", benefits: "Mild and easy on the digestive fire." }
     },
-    "Kapha": {
+    Kapha: {
       breakfast: { name: "Spiced Quinoa Porridge", description: "Quinoa cooked with ginger, cloves, and honey (no milk).", benefits: "Light, warm, and spicy to stimulate metabolism." },
       lunch: { name: "Millet Roti & Bitter Gourd Sabzi", description: "Bajra roti with light karela sabzi.", benefits: "Bitter and pungent tastes reduce Kapha heaviness." },
       dinner: { name: "Lentil Soup", description: "Spicy masoor dal soup with black pepper.", benefits: "Light and protein-rich." }
     }
   };
-  return plans[dosha] || plans["Vata"];
+  return plans[dosha] || plans.Vata;
 }

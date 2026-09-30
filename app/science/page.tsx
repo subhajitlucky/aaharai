@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Microscope, History, Zap, Heart, Brain } from "lucide-react";
+import { ShieldCheck, Microscope, History, Zap, Brain } from "lucide-react";
 
 const pillars = [
   {
@@ -37,7 +37,7 @@ export default function SciencePage() {
         </motion.div>
         <h1 className="text-5xl md:text-7xl font-bold text-charcoal mb-6">Ancient Wisdom, <br/> <span className="text-clay">Proven Science.</span></h1>
         <p className="text-xl text-charcoal/60 max-w-2xl mx-auto leading-relaxed">
-          Aaharai isn't just about tradition. It's about reconnecting with the biological laws that governed human health for millennia.
+          Aaharai isn’t just about tradition. It’s about reconnecting with the biological laws that governed human health for millennia.
         </p>
       </div>
 
@@ -66,7 +66,7 @@ export default function SciencePage() {
         
         <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-8">Why "Make India Healthy Again"?</h2>
+            <h2 className="text-4xl font-bold mb-8">Why “Make India Healthy Again”?</h2>
             <div className="space-y-6">
               <div className="flex gap-4">
                 <div className="w-6 h-6 rounded-full bg-clay shrink-0 mt-1 flex items-center justify-center text-[10px] font-bold">1</div>
@@ -89,8 +89,8 @@ export default function SciencePage() {
               Historical Longevity
             </h4>
             <div className="space-y-4 text-sm text-white/60 italic leading-relaxed">
-              <p>"Let food be thy medicine, and medicine be thy food." — Ancient Proverb</p>
-              <p>Indian civilizations thrived for thousands of years without modern hospitals by mastering the art of 'Aahar' (Nutrition) and 'Vihar' (Lifestyle).</p>
+              <p>“Let food be thy medicine, and medicine be thy food.” — Ancient Proverb</p>
+              <p>Indian civilizations thrived for thousands of years without modern hospitals by mastering the art of ‘Aahar’ (Nutrition) and ‘Vihar’ (Lifestyle).</p>
             </div>
           </div>
         </div>

@@ -1,50 +1,42 @@
-/**
- * Presentation mappings shared by the recipes index and detail pages.
- * Keeps human-facing labels for the enum values in the content contract
- * in ONE place so UI and future surfaces cannot drift apart.
- */
-import {
-  BookOpen,
-  MessagesSquare,
-  ScrollText,
-  type LucideIcon,
-} from "lucide-react";
-import type { Recipe } from "@/lib/content/schema";
+import type { SourcedRecipe } from "@/lib/content/schema";
 
-type SourceType = Recipe["lineage"]["sourceType"];
-type VerificationTier = Recipe["verification"]["tier"];
-type DietaryFrame = Recipe["dietaryFrame"];
-
-/** Editorial serif stack - the project ships no serif webfont; system serifs
- *  give the archive its print feel without adding a build-time dependency. */
 export const SERIF_DISPLAY =
   "Georgia, 'Iowan Old Style', 'Times New Roman', 'Noto Serif', ui-serif, serif";
 
-export const SOURCE_TYPE_PRESENTATION: Record<
-  SourceType,
-  { label: string; icon: LucideIcon }
-> = {
-  oral: { label: "Oral tradition", icon: MessagesSquare },
-  "family-manuscript": { label: "Family manuscript", icon: ScrollText },
-  "community-cookbook": { label: "Community cookbook", icon: BookOpen },
+export const TRUST_LABELS: Record<SourcedRecipe["trustLabel"], string> = {
+  "source-cited": "Source-cited",
+  "regional-heritage": "Regional heritage",
+  "community-tested": "Community tested",
+  "ai-created": "AI-created",
 };
 
-export const VERIFICATION_TIER_LABELS: Record<VerificationTier, string> = {
-  "family-archive": "Family Archive",
-  "community-verified": "Community Verified",
-};
-
-export const DIETARY_FRAME_LABELS: Record<DietaryFrame, string> = {
+export const DIETARY_TAG_LABELS: Record<SourcedRecipe["dietaryTags"][number], string> = {
   satvik: "Satvik",
   jain: "Jain",
-  "no-onion-garlic": "No Onion & Garlic",
-  "non-veg": "Non-Veg",
+  "no-onion-garlic": "No onion & garlic",
+  "non-veg": "Non-vegetarian",
   vegan: "Vegan",
   vegetarian: "Vegetarian",
+  "dairy-free": "Dairy-free",
+  "gluten-free": "Gluten-free",
+  "nut-free": "Nut-free",
 };
 
-export function totalTimeMinutes(recipe: Recipe): number {
-  return recipe.time.prepMinutes + recipe.time.cookMinutes;
+export const SEASON_TAG_LABELS: Record<SourcedRecipe["seasonTags"][number], string> = {
+  spring: "Spring",
+  summer: "Summer",
+  monsoon: "Monsoon",
+  autumn: "Autumn",
+  fall: "Fall",
+  winter: "Winter",
+  "year-round": "Year-round",
+  "all-season": "All season",
+  "pre-monsoon": "Pre-monsoon",
+  "post-monsoon": "Post-monsoon",
+};
+
+export function totalTimeMinutes(recipe: SourcedRecipe): number {
+  return recipe.totalTimeMinutes;
 }
 
 export function formatMinutes(total: number): string {
@@ -54,9 +46,19 @@ export function formatMinutes(total: number): string {
   return minutes === 0 ? `${hours} hr` : `${hours} hr ${minutes} min`;
 }
 
-/** "District, State" - sub-region when present, always anchored by state. */
-export function formatRegionLine(recipe: Recipe): string {
-  return [recipe.region.subRegion, recipe.region.state]
+export function formatRegionLine(recipe: SourcedRecipe): string {
+  return [recipe.region.subRegion, recipe.region.district, recipe.region.state]
     .filter(Boolean)
     .join(", ");
+}
+
+export function formatDietaryTags(recipe: SourcedRecipe): string {
+  return recipe.dietaryTags.map((tag) => DIETARY_TAG_LABELS[tag]).join(" · ");
+}
+
+export function formatSeasonWindow(recipe: SourcedRecipe): string {
+  const { calendar, startMonth, endMonth } = recipe.seasonWindow;
+  return calendar === "cross-year"
+    ? `${startMonth}–${endMonth} (cross-year)`
+    : `${startMonth}–${endMonth}`;
 }

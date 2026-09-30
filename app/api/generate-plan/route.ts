@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     const plan = await generateMealPlan(dosha);
     return NextResponse.json({ plan });
 
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to generate plan" }, { status: 500 });
   }
 }

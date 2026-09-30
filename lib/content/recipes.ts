@@ -1,108 +1,174 @@
-/**
- * Recipe loader - the only door between content/recipes/*.mdx and the app.
- *
- * Product promise: a recipe with incomplete or malformed provenance must never
- * render. Any .mdx (except _*-prefixed templates) that fails the Verified
- * Regional Authenticity contract aborts the build with a descriptive,
- * file-by-file error - the same contract scripts/validate-content.mjs enforces.
- */
 import { readdirSync, readFileSync } from "node:fs";
 import { basename, join } from "node:path";
 import matter from "gray-matter";
 import type { ZodError } from "zod";
-import { recipeSchema, type Recipe } from "@/lib/content/schema";
+import { sourcedRecipeSchema, type SourcedRecipe } from "@/lib/content/schema";
+import { loadContentRegistries } from "@/lib/content/registries";
+import { validateContentReferences } from "@/lib/content/reference-validation";
 
 export const RECIPES_CONTENT_DIR = join(process.cwd(), "content", "recipes");
 
-/** A schema-validated recipe plus its prose body (frontmatter stripped). */
-export type LoadedRecipe = Recipe & { body: string };
+export type LoadedRecipe = SourcedRecipe & { body: string };
 
-// Memoised per process: static prerendering reads the directory exactly once.
-// (Restart the dev server after editing .mdx files.)
-let cache: LoadedRecipe[] | null = null;
+type RecipeCache = {
+  root: string;
+  recipes: LoadedRecipe[];
+};
+
+let cache: RecipeCache | null = null;
+
+export function recipeFilenameMatchesSlug(filename: string, slug: string): boolean {
+  return basename(filename, ".mdx") === slug;
+}
+
+export function plainTextBody(content: string): string {
+  return content
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/[`*_>#]/g, "")
+    .split(/\n\s*\n/)
+    .map((block) => block.replace(/\s+/g, " ").trim())
+    .filter(Boolean)
+    .join("\n\n")
+    .trim();
+}
+
+function compareText(left: string, right: string): number {
+  if (left < right) return -1;
+  if (left > right) return 1;
+  return 0;
+}
 
 function formatZodIssues(error: ZodError): string[] {
   return error.issues.map(
-    (issue) => `     - [${issue.path.join(".") || "(root)"}] ${issue.message}`
+    (issue) => `     - [${issue.path.join(".") || "(root)"}] ${issue.message}`,
   );
 }
 
-function loadAllRecipes(): LoadedRecipe[] {
-  if (cache) return cache;
-
+export function loadRecipesFromDirectory(directory: string): LoadedRecipe[] {
   let files: string[];
   try {
-    files = readdirSync(RECIPES_CONTENT_DIR).filter(
-      (f) => f.endsWith(".mdx") && !f.startsWith("_")
-    );
-  } catch (err) {
+    files = readdirSync(directory)
+      .filter((file) => file.endsWith(".mdx") && !file.startsWith("_"))
+      .sort();
+  } catch (error) {
     throw new Error(
-      `[aaharai] Cannot read recipe content directory "${RECIPES_CONTENT_DIR}". ${String(err)}`
+      `[aaharai] Cannot read recipe content directory "${directory}". ${String(error)}`,
     );
   }
 
   const loaded: LoadedRecipe[] = [];
   const failures: string[] = [];
+  const seenIds = new Set<string>();
+  const seenSlugs = new Set<string>();
 
   for (const file of files) {
-    const raw = readFileSync(join(RECIPES_CONTENT_DIR, file), "utf8");
-    const parsed = matter(raw);
-    const result = recipeSchema.safeParse(parsed.data);
+    const raw = readFileSync(join(directory, file), "utf8");
+    let parsed: matter.GrayMatterFile<string>;
+    try {
+      parsed = matter(raw);
+    } catch (error) {
+      failures.push(
+        [
+          "content/recipes/" + file,
+          `     - [frontmatter] ${String(error)}`,
+        ].join("\n"),
+      );
+      continue;
+    }
+    const result = sourcedRecipeSchema.safeParse(parsed.data);
 
     if (!result.success) {
       failures.push(
-        ["content/recipes/" + file, ...formatZodIssues(result.error)].join("\n")
+        ["content/recipes/" + file, ...formatZodIssues(result.error)].join("\n"),
       );
       continue;
     }
 
     const recipe = result.data;
     const fileSlug = basename(file, ".mdx");
-    if (recipe.slug !== fileSlug) {
+    if (!recipeFilenameMatchesSlug(file, recipe.slug)) {
       failures.push(
         [
           "content/recipes/" + file,
           `     - [slug] frontmatter slug "${recipe.slug}" must match filename "${fileSlug}.mdx"`,
-        ].join("\n")
+        ].join("\n"),
       );
       continue;
     }
-    if (loaded.some((r) => r.slug === recipe.slug)) {
+    if (seenIds.has(recipe.id)) {
+      failures.push(
+        [
+          "content/recipes/" + file,
+          `     - [id] duplicate recipe ID "${recipe.id}" - IDs must be unique`,
+        ].join("\n"),
+      );
+      continue;
+    }
+    if (seenSlugs.has(recipe.slug)) {
       failures.push(
         [
           "content/recipes/" + file,
           `     - [slug] duplicate slug "${recipe.slug}" - slugs become URLs and must be unique`,
-        ].join("\n")
+        ].join("\n"),
       );
       continue;
     }
 
-    loaded.push({ ...recipe, body: parsed.content.trim() });
+    seenIds.add(recipe.id);
+    seenSlugs.add(recipe.slug);
+    loaded.push({ ...recipe, body: plainTextBody(parsed.content) });
   }
 
   if (failures.length > 0) {
     throw new Error(
       [
         "",
-        `[aaharai] RECIPE CONTENT REJECTED - ${failures.length} of ${files.length} file(s) failed the Verified Regional Authenticity contract.`,
-        "Incomplete provenance must never ship. Fix the file(s) below and rebuild.",
+        `[aaharai] SOURCED RECIPE CONTENT REJECTED - ${failures.length} of ${files.length} file(s) failed the sourced recipe contract.`,
+        "Fix the file(s) below and rebuild.",
         "",
         ...failures,
         "",
-      ].join("\n")
+      ].join("\n"),
     );
   }
 
-  cache = loaded.sort((a, b) => a.title.localeCompare(b.title));
-  return cache;
+  return loaded.sort(
+    (left, right) =>
+      compareText(left.title, right.title) || compareText(left.slug, right.slug),
+  );
 }
 
-/** All verified recipes, sorted alphabetically by title. */
-export function getAllRecipes(): Recipe[] {
-  return loadAllRecipes();
+function getLoadedRecipes(root: string): LoadedRecipe[] {
+  if (cache?.root === root) return cache.recipes;
+  const recipes = loadRecipesFromDirectory(join(root, "content", "recipes"));
+  const registries = loadContentRegistries(root);
+  const issues = validateContentReferences({ ...registries, recipes });
+  if (issues.length > 0) {
+    throw new Error(
+      [
+        "",
+        `[aaharai] CONTENT REFERENCE VALIDATION FAILED - ${issues.length} issue(s).`,
+        ...issues.map((message) => `     - ${message}`),
+        "",
+      ].join("\n"),
+    );
+  }
+  cache = { root, recipes };
+  return recipes;
 }
 
-/** One verified recipe by URL slug, including its prose body; undefined if absent. */
-export function getRecipeBySlug(slug: string): LoadedRecipe | undefined {
-  return loadAllRecipes().find((r) => r.slug === slug);
+export function clearRecipeCache(): void {
+  cache = null;
+}
+
+export function getAllRecipes(root = process.cwd()): SourcedRecipe[] {
+  return getLoadedRecipes(root);
+}
+
+export function getRecipeBySlug(slug: string, root = process.cwd()): LoadedRecipe | undefined {
+  return getLoadedRecipes(root).find((recipe) => recipe.slug === slug);
 }

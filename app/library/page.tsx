@@ -1,32 +1,63 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Search, Leaf, Sparkles, ChevronRight, X, Bookmark, History, Quote, Stethoscope, CheckCircle2 } from "lucide-react";
-import Link from "next/link";
+import { Search, Leaf, Sparkles, ChevronRight, X, Bookmark, History, Quote, Stethoscope, CheckCircle2 } from "lucide-react";
+
+type SavedSwap = {
+  craving: string;
+  name: string;
+  description: string;
+  ingredients?: string[];
+};
+
+type SavedRemedy = {
+  title: string;
+  procedure: string;
+};
+
+type PranaLog = {
+  category: string;
+  date: string;
+  items?: string[];
+  score: number;
+};
+
+function readStoredItems<T>(key: string): T[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const parsed: unknown = JSON.parse(
+      window.localStorage.getItem(key) ?? "[]",
+    );
+    return Array.isArray(parsed) ? (parsed as T[]) : [];
+  } catch {
+    return [];
+  }
+}
 
 export default function AncientLibraryPage() {
   const [activeTab, setActiveTab] = useState<"library" | "saved">("library");
-  const [savedSwaps, setSavedSwaps] = useState<any[]>([]);
-  const [savedRemedies, setSavedRemedies] = useState<any[]>([]);
-  const [pranaLogs, setPranaLogs] = useState<any[]>([]);
+  const [savedSwaps, setSavedSwaps] = useState<SavedSwap[]>([]);
+  const [savedRemedies, setSavedRemedies] = useState<SavedRemedy[]>([]);
+  const [pranaLogs, setPranaLogs] = useState<PranaLog[]>([]);
 
-  useEffect(() => {
-    const swaps = JSON.parse(localStorage.getItem("aaharai_swaps") || "[]");
-    const remedies = JSON.parse(localStorage.getItem("aaharai_remedies") || "[]");
-    const logs = JSON.parse(localStorage.getItem("aaharai_prana_log") || "[]");
-    
-    setSavedSwaps(swaps);
-    setSavedRemedies(remedies);
-    setPranaLogs(logs);
-  }, [activeTab]);
-
-  const clearItem = (key: string, index: number, stateSetter: any) => {
-    const existing = JSON.parse(localStorage.getItem(key) || "[]");
-    existing.splice(index, 1);
-    localStorage.setItem(key, JSON.stringify(existing));
-    stateSetter([...existing]);
+  const refreshVault = () => {
+    setSavedSwaps(readStoredItems<SavedSwap>("aaharai_swaps"));
+    setSavedRemedies(readStoredItems<SavedRemedy>("aaharai_remedies"));
+    setPranaLogs(readStoredItems<PranaLog>("aaharai_prana_log"));
   };
+
+  function clearItem<T>(
+    key: string,
+    index: number,
+    stateSetter: Dispatch<SetStateAction<T[]>>,
+  ) {
+    const existing = readStoredItems<T>(key);
+    const remaining = existing.filter((_, itemIndex) => itemIndex !== index);
+    window.localStorage.setItem(key, JSON.stringify(remaining));
+    stateSetter(remaining);
+  }
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
@@ -45,7 +76,10 @@ export default function AncientLibraryPage() {
             Universal Knowledge
           </button>
           <button 
-            onClick={() => setActiveTab("saved")}
+            onClick={() => {
+              setActiveTab("saved");
+              refreshVault();
+            }}
             className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${activeTab === "saved" ? "bg-white text-clay shadow-lg shadow-charcoal/5" : "text-charcoal/40 hover:text-charcoal"}`}
           >
             My Sacred Vault
@@ -110,7 +144,7 @@ export default function AncientLibraryPage() {
                       </button>
                       <p className="text-[10px] font-bold text-clay uppercase mb-2">Craving: {swap.craving}</p>
                       <h3 className="font-bold text-charcoal text-lg mb-1">{swap.name}</h3>
-                      <p className="text-charcoal/60 text-sm italic mb-4">"{swap.description}"</p>
+                      <p className="text-charcoal/60 text-sm italic mb-4">“{swap.description}”</p>
                       <div className="flex flex-wrap gap-1.5">
                         {swap.ingredients?.slice(0,3).map((ing: string) => (
                           <span key={ing} className="px-2 py-0.5 bg-sand rounded-md text-[10px] font-bold text-charcoal/40 uppercase">{ing}</span>

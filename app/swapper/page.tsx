@@ -5,11 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, Sparkles, ArrowRight, Utensils, Bookmark, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
+type SwapResult = {
+  name: string;
+  description: string;
+  why: string;
+  ingredients?: string[];
+};
+
 export default function SwapperPage() {
   const [query, setQuery] = useState("");
   const [dosha, setDosha] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<SwapResult | null>(null);
   const [isSaved, setIsSaved] = useState(false);
 
   // Load dosha from localStorage
@@ -73,7 +80,7 @@ export default function SwapperPage() {
           Junk to <span className="text-clay">Jewel</span>
         </h1>
         <p className="text-lg text-charcoal/70 mb-10">
-          Tell us what you crave. We'll tell you what to eat <br/>
+          Tell us what you crave. We’ll tell you what to eat <br/>
           to satisfy the soul, not just the tongue.
         </p>
 
@@ -123,7 +130,7 @@ export default function SwapperPage() {
               </div>
               
               <h2 className="text-3xl font-bold text-charcoal mb-2">{result.name}</h2>
-              <p className="text-xl text-clay font-serif italic mb-6">"{result.description}"</p>
+              <p className="text-xl text-clay font-serif italic mb-6">“{result.description}”</p>
               
               <div className="space-y-4">
                 <div className="bg-white/50 p-4 rounded-xl">

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex-1 flex flex-col items-center justify-center relative overflow-hidden px-4 py-20">
+    <div className="flex-1 flex flex-col items-center justify-center relative overflow-hidden px-4 py-20">
       
       {/* Background Decor */}
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-turmeric/20 rounded-full blur-[100px] -z-10 animate-pulse" />
@@ -21,7 +21,7 @@ export default function Home() {
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm font-medium text-clay mb-4">
           <Sparkles className="w-4 h-4" />
-          <span>India's First Ayurvedic AI Assistant</span>
+          <span>India’s First Ayurvedic AI Assistant</span>
         </div>
 
         <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-charcoal">
@@ -84,6 +84,6 @@ export default function Home() {
         </p>
       </motion.div>
 
-    </main>
+    </div>
   );
 }

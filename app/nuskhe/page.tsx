@@ -4,6 +4,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Stethoscope, Sparkles, AlertCircle, Coffee, Thermometer, Wind, Bookmark, CheckCircle2 } from "lucide-react";
 
+type Remedy = {
+  title: string;
+  procedure: string;
+  why: string;
+  warning: string;
+};
+
 const quickSymptoms = [
   { name: "Bloated Stomach", icon: Wind },
   { name: "Common Cold", icon: Thermometer },
@@ -14,7 +21,7 @@ const quickSymptoms = [
 export default function NuskhePage() {
   const [symptom, setSymptom] = useState("");
   const [loading, setLoading] = useState(false);
-  const [remedy, setRemedy] = useState<any>(null);
+  const [remedy, setRemedy] = useState<Remedy | null>(null);
   const [dosha, setDosha] = useState<string | null>(null);
   const [isSaved, setIsSaved] = useState(false);
 
@@ -59,7 +66,7 @@ export default function NuskhePage() {
       
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Ancient <span className="text-clay">Nuskhe</span></h1>
-        <p className="text-lg text-charcoal/60">Natural remedies from grandmother's kitchen, backed by AI wisdom.</p>
+        <p className="text-lg text-charcoal/60">Natural remedies from grandmother’s kitchen, backed by AI wisdom.</p>
         {dosha && (
           <p className="mt-4 text-xs font-bold text-clay uppercase tracking-widest bg-clay/5 inline-block px-4 py-2 rounded-full border border-clay/10">
             Tuned for {dosha} Prakriti

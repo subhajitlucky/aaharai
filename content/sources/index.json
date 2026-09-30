@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "src-icar-rice-foods-2015",
+      "title": "Traditional Rice Foods: The Rich Heritage of India",
+      "sourceType": "published-cookbook",
+      "citation": "Das Lipi (2015). Traditional Rice Foods: The Rich Heritage of India. ICAR-Central Rice Research Institute, Cuttack, Odisha, India.",
+      "url": "https://icar-crri.in/wp-content/uploads/2023/05/final_book_ldas.pdf",
+      "accessedAt": "2026-09-25",
+      "rights": "cited",
+      "rightsEvidence": "The institutional PDF is publicly accessible for citation, but no open license or electronic-reproduction permission is asserted by the source record reviewed here.",
+      "usageBoundary": "Used as a cited source for regional identification and factual method checks; recipe prose and images are independently written and no source text is reproduced.",
+      "reviewedBy": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "src-icar-uttarakhand-cuisine-2023",
+      "title": "Nutritious and Healthful Traditional Cuisine of Uttarakhand Himalayas",
+      "sourceType": "published-cookbook",
+      "citation": "Bhartiya Anuradha, Bisht Jogendra Singh, Joshi Kushagra, Kumar Jitendra, Aditya Jay Prakash and Kant Lakshmi (2023). Nutritious and Healthful Traditional Cuisine of Uttarakhand Himalayas. ICAR-Vivekananda Parvatiya Krishi Anusandhan Sansthan, Almora, Uttarakhand.",
+      "url": "https://alliance.indiaagrobdunepproject.cgiar.org/fileadmin/templates/MainstreamingAgricultural/Uploads/publications/Recipe_book_Cuisine_of_Uttarakhand_VPKAS-compressed_1_compressed.pdf",
+      "accessedAt": "2026-09-25",
+      "rights": "cited",
+      "rightsEvidence": "The institutional PDF is publicly accessible for citation, but no open license or electronic-reproduction permission is asserted by the source record reviewed here.",
+      "usageBoundary": "Used as a cited source for the Madue Ki Bari name, region, and method-level facts; recipe prose and images are independently written and no source text is reproduced.",
+      "reviewedBy": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "src-usda-fdc-sr-legacy-2018",
+      "title": "USDA FoodData Central SR Legacy April 2018",
+      "sourceType": "government-food-nutrition-table",
+      "citation": "U.S. Department of Agriculture, Agricultural Research Service. FoodData Central, SR Legacy release, April 2018. Food records and nutrient values identified by FDC ID.",
+      "url": "https://fdc.nal.usda.gov/download-datasets",
+      "accessedAt": "2026-09-25",
+      "rights": "public-domain",
+      "rightsEvidence": "USDA states that FoodData Central data are in the public domain and published under CC0 1.0; no permission is needed for use.",
+      "usageBoundary": "Exact USDA food descriptions, FDC IDs, data type, and per-100g nutrient values are recorded in the nutrition manifest; recipe-level values are calculated estimates, not measured recipe analyses.",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "reviewedBy": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "src-jain-dosa-mit-2020",
+      "title": "Dosa recipe from the JainRecipes family recipe compilation",
+      "sourceType": "community-cookbook",
+      "citation": "Rahul Jain and Rishabh Jain. Dosa. _posts/2020-05-18-dosa.markdown, JainRecipes/JainRecipes.github.io, commit 64c6a8b63dd210a2d61e5289572d8fda48355323 (2020-05-18).",
+      "url": "https://github.com/JainRecipes/JainRecipes.github.io/blob/64c6a8b63dd210a2d61e5289572d8fda48355323/_posts/2020-05-18-dosa.markdown",
+      "accessedAt": "2026-09-25",
+      "rights": "licensed",
+      "rightsEvidence": "The repository LICENSE.txt is the MIT License, copyright © 2018 Rahul & Rishabh Jain; it grants use, copying, modification, publication, distribution, sublicensing, and sale of the licensed material.",
+      "usageBoundary": "The cited Dosa post is marked Vegan, Jain and lists rice, urad dal, and salt. This record independently normalizes quantities and writes a concise method; attribution and license link are retained in the source registry.",
+      "licenseUrl": "https://github.com/JainRecipes/JainRecipes.github.io/blob/64c6a8b63dd210a2d61e5289572d8fda48355323/LICENSE.txt",
+      "reviewedBy": "Aaharai AI-assisted source audit",
+      "reviewedAt": "2026-09-25"
+    }
+  ]
+}
