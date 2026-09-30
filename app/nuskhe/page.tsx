@@ -66,7 +66,7 @@ export default function NuskhePage() {
       
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Ancient <span className="text-clay">Nuskhe</span></h1>
-        <p className="text-lg text-charcoal/60">Natural remedies from grandmother’s kitchen, backed by AI wisdom.</p>
+        <p className="text-lg text-charcoal/80">Natural remedies from grandmother’s kitchen, backed by AI wisdom.</p>
         {dosha && (
           <p className="mt-4 text-xs font-bold text-clay uppercase tracking-widest bg-clay/5 inline-block px-4 py-2 rounded-full border border-clay/10">
             Tuned for {dosha} Prakriti
@@ -76,7 +76,7 @@ export default function NuskhePage() {
 
       {/* Input Section */}
       <div className="bg-white p-8 rounded-[2.5rem] shadow-xl shadow-charcoal/5 border border-charcoal/5 mb-12">
-        <label className="block text-sm font-bold text-charcoal/40 uppercase tracking-widest mb-4">How are you feeling?</label>
+        <label className="block text-sm font-bold text-charcoal/80 uppercase tracking-widest mb-4">How are you feeling?</label>
         <div className="flex flex-col md:flex-row gap-4">
           <input 
             type="text" 
@@ -97,13 +97,13 @@ export default function NuskhePage() {
 
         {/* Quick Tags */}
         <div className="mt-8">
-          <p className="text-xs font-bold text-charcoal/30 uppercase mb-4">Common Issues</p>
+          <p className="text-xs font-bold text-charcoal/80 uppercase mb-4">Common Issues</p>
           <div className="flex flex-wrap gap-3">
             {quickSymptoms.map((s) => (
               <button
                 key={s.name}
                 onClick={() => { setSymptom(s.name); fetchRemedy(s.name); }}
-                className="flex items-center gap-2 px-4 py-2 bg-sand rounded-full text-sm font-medium text-charcoal/60 hover:bg-clay/10 hover:text-clay transition-all border border-transparent hover:border-clay/20"
+                className="flex items-center gap-2 px-4 py-2 bg-sand rounded-full text-sm font-medium text-charcoal/80 hover:bg-clay/10 hover:text-clay transition-all border border-transparent hover:border-clay/20"
               >
                 <s.icon className="w-4 h-4" />
                 {s.name}
@@ -130,7 +130,7 @@ export default function NuskhePage() {
               </div>
               <button 
                 onClick={saveToLibrary}
-                className="p-3 bg-sand rounded-2xl text-charcoal/40 hover:text-clay transition-colors"
+                className="p-3 bg-sand rounded-2xl text-charcoal/80 hover:text-clay transition-colors"
               >
                 {isSaved ? <CheckCircle2 className="w-6 h-6 text-sage" /> : <Bookmark className="w-6 h-6" />}
               </button>
@@ -139,12 +139,12 @@ export default function NuskhePage() {
             <div className="grid md:grid-cols-2 gap-10">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xs font-bold text-charcoal/30 uppercase tracking-widest mb-3">The Procedure</h3>
+                  <h3 className="text-xs font-bold text-charcoal/80 uppercase tracking-widest mb-3">The Procedure</h3>
                   <p className="text-charcoal/80 leading-relaxed text-lg">{remedy.procedure}</p>
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold text-charcoal/30 uppercase tracking-widest mb-3">Why it works</h3>
-                  <p className="text-charcoal/60 italic">{remedy.why}</p>
+                  <h3 className="text-xs font-bold text-charcoal/80 uppercase tracking-widest mb-3">Why it works</h3>
+                  <p className="text-charcoal/80 italic">{remedy.why}</p>
                 </div>
               </div>
 
@@ -153,10 +153,10 @@ export default function NuskhePage() {
                   <AlertCircle className="w-5 h-5" />
                   <span className="font-bold text-sm uppercase">Safety Note</span>
                 </div>
-                <p className="text-sm text-charcoal/70 leading-relaxed">
+                <p className="text-sm text-charcoal/80 leading-relaxed">
                   {remedy.warning}
                 </p>
-                <p className="mt-4 text-[10px] text-charcoal/30 leading-tight">
+                <p className="mt-4 text-[10px] text-charcoal/80 leading-tight">
                   Disclaimer: This is for educational purposes based on traditional knowledge. Please consult a qualified doctor for serious conditions.
                 </p>
               </div>

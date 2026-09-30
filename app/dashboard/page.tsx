@@ -104,7 +104,7 @@ export default function Dashboard() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
         <div>
           <h1 className="text-4xl font-bold text-charcoal mb-2 text-balance text-left">Namaste, Health Seeker</h1>
-          <p className="text-charcoal/60">Your journey to reclaim ancestral health is active.</p>
+          <p className="text-charcoal/80">Your journey to reclaim ancestral health is active.</p>
         </div>
         <div className="flex gap-4">
           <div className="bg-white p-4 rounded-2xl shadow-sm border border-charcoal/5 flex items-center gap-4">
@@ -112,16 +112,16 @@ export default function Dashboard() {
               <Flame className="w-6 h-6 fill-current" />
             </div>
             <div>
-              <p className="text-xs text-charcoal/40 uppercase font-bold tracking-wider">Streak</p>
+              <p className="text-xs text-charcoal/80 uppercase font-bold tracking-wider">Streak</p>
               <p className="text-xl font-bold text-charcoal">{streak} Days</p>
             </div>
           </div>
           <div className="bg-white p-4 rounded-2xl shadow-sm border border-charcoal/5 flex items-center gap-4">
-            <div className="w-12 h-12 bg-turmeric/20 rounded-full flex items-center justify-center text-turmeric-700">
+            <div className="w-12 h-12 bg-turmeric/20 rounded-full flex items-center justify-center text-turmeric-deep">
               <Trophy className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-xs text-charcoal/40 uppercase font-bold tracking-wider">Points</p>
+              <p className="text-xs text-charcoal/80 uppercase font-bold tracking-wider">Points</p>
               <p className="text-xl font-bold text-charcoal">{points}</p>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function Dashboard() {
             </div>
             <div className="flex justify-between text-sm font-medium">
               <span>Day {streak}</span>
-              <span className="text-white/40">Goal: 21 Days</span>
+              <span className="text-white/90">Goal: 21 Days</span>
             </div>
           </div>
 
@@ -162,7 +162,7 @@ export default function Dashboard() {
                 <Scale className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold text-charcoal mb-2">My {dosha} Nature</h3>
-              <p className="text-charcoal/60 text-sm mb-4">Your rituals are currently tuned to balance your {dosha} dominance.</p>
+              <p className="text-charcoal/80 text-sm mb-4">Your rituals are currently tuned to balance your {dosha} dominance.</p>
               <Link href="/prakriti-test" className="text-sage font-bold text-sm flex items-center gap-1 hover:underline">
                 Recalibrate Prakriti <ChevronRight className="w-4 h-4" />
               </Link>
@@ -173,7 +173,7 @@ export default function Dashboard() {
                 <Coffee className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold text-charcoal mb-2">Ancient Rituals</h3>
-              <p className="text-charcoal/60 text-sm mb-4">Your Daily Dinacharya helps you stay in sync with the cosmic clock.</p>
+              <p className="text-charcoal/80 text-sm mb-4">Your Daily Dinacharya helps you stay in sync with the cosmic clock.</p>
               <Link href="/dinacharya" className="text-charcoal font-bold text-sm flex items-center gap-1 hover:underline">
                 View Daily Schedule <ChevronRight className="w-4 h-4" />
               </Link>
@@ -201,7 +201,7 @@ export default function Dashboard() {
                 <h3 className="font-bold text-charcoal text-lg mb-1 flex items-center gap-2">
                   Seasonal Wisdom ({seasonalData?.season || "Ritucharya"})
                 </h3>
-                <p className="text-sm text-charcoal/60 leading-relaxed mb-4">
+                <p className="text-sm text-charcoal/80 leading-relaxed mb-4">
                   {seasonalData?.advice?.food || "Loading ancient seasonal guidance..."}
                 </p>
                 <div className="flex items-center gap-2 text-xs font-medium text-clay bg-clay/10 px-3 py-1.5 rounded-lg w-fit">
@@ -215,26 +215,26 @@ export default function Dashboard() {
         {/* Right Column: Recent Activity */}
         <div className="bg-white p-8 rounded-[2rem] border border-charcoal/5 shadow-sm">
           <div className="flex items-center gap-2 mb-8">
-            <History className="w-5 h-5 text-charcoal/40" />
+            <History className="w-5 h-5 text-charcoal/80" />
             <h2 className="text-xl font-bold text-charcoal">Sacred Log</h2>
           </div>
           
           <div className="space-y-6">
             {recentActivities.length === 0 && (
               <div className="text-center py-10 border border-dashed border-charcoal/10 rounded-2xl">
-                <p className="text-charcoal/50 text-sm mb-1">Your Sacred Log is empty.</p>
-                <p className="text-charcoal/30 text-xs">Analyze your first meal below to begin your journey.</p>
+                <p className="text-charcoal/80 text-sm mb-1">Your Sacred Log is empty.</p>
+                <p className="text-charcoal/80 text-xs">Analyze your first meal below to begin your journey.</p>
               </div>
             )}
             {recentActivities.map((activity, idx) => (
               <div key={idx} className="flex items-center justify-between group cursor-pointer">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-sand flex items-center justify-center text-charcoal/40 group-hover:bg-clay/10 group-hover:text-clay transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-sand flex items-center justify-center text-charcoal/80 group-hover:bg-clay/10 group-hover:text-clay transition-colors">
                     <UtensilsIcon size={18} />
                   </div>
                   <div>
                     <p className="font-bold text-charcoal text-sm">{activity.name}</p>
-                    <p className="text-xs text-charcoal/40">{activity.type} • {activity.date}</p>
+                    <p className="text-xs text-charcoal/80">{activity.type} • {activity.date}</p>
                   </div>
                 </div>
                 <span className="text-sage font-bold text-sm">{activity.points}</span>

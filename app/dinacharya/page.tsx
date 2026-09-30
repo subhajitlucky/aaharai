@@ -59,8 +59,8 @@ export default function DinacharyaPage() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Daily <span className="text-turmeric-700">Rituals</span></h1>
-        <p className="text-lg text-charcoal/60 italic">“He who follows Dinacharya lives for 100 years, free from disease.” — Charaka Samhita</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Daily <span className="text-turmeric-deep">Rituals</span></h1>
+        <p className="text-lg text-charcoal/80 italic">“He who follows Dinacharya lives for 100 years, free from disease.” — Charaka Samhita</p>
       </div>
 
       <div className="grid lg:grid-cols-5 gap-12">
@@ -75,9 +75,9 @@ export default function DinacharyaPage() {
             
             <div className="space-y-6">
               <div>
-                <label className="block text-xs font-bold text-charcoal/40 uppercase tracking-widest mb-3">Wake-up Time</label>
+                <label className="block text-xs font-bold text-charcoal/80 uppercase tracking-widest mb-3">Wake-up Time</label>
                 <div className="relative">
-                  <Clock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-charcoal/30" />
+                  <Clock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-charcoal/80" />
                   <input 
                     type="time" 
                     className="w-full pl-12 pr-4 py-4 bg-sand/50 rounded-2xl outline-none focus:ring-2 focus:ring-clay/20 transition-all font-medium text-charcoal"
@@ -88,7 +88,7 @@ export default function DinacharyaPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-charcoal/40 uppercase tracking-widest mb-3">Dominant Dosha</label>
+                <label className="block text-xs font-bold text-charcoal/80 uppercase tracking-widest mb-3">Dominant Dosha</label>
                 <div className="grid grid-cols-3 gap-2">
                   {["Vata", "Pitta", "Kapha"].map((d) => (
                     <button
@@ -97,7 +97,7 @@ export default function DinacharyaPage() {
                       className={`py-3 rounded-xl text-sm font-bold transition-all ${
                         dosha === d 
                         ? "bg-clay text-white shadow-lg shadow-clay/20" 
-                        : "bg-sand text-charcoal/40 hover:bg-charcoal/5"
+                        : "bg-sand text-charcoal/80 hover:bg-charcoal/5"
                       }`}
                     >
                       {d}
@@ -118,10 +118,10 @@ export default function DinacharyaPage() {
 
           <div className="bg-turmeric/10 p-6 rounded-3xl border border-turmeric/20">
             <h3 className="font-bold text-charcoal mb-2 flex items-center gap-2">
-              <Sunrise className="w-4 h-4 text-turmeric-700" />
+              <Sunrise className="w-4 h-4 text-turmeric-deep" />
               Brahma Muhurta
             </h3>
-            <p className="text-sm text-charcoal/60 leading-relaxed">
+            <p className="text-sm text-charcoal/80 leading-relaxed">
               The period 1.5 hours before sunrise is when the air is charged with ‘Prana’. Waking then balances all three Doshas instantly.
             </p>
           </div>
@@ -135,11 +135,11 @@ export default function DinacharyaPage() {
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 className="h-full flex flex-col items-center justify-center text-center p-12 bg-white rounded-[3rem] border border-dashed border-charcoal/10"
               >
-                <div className="w-16 h-16 bg-sand rounded-full flex items-center justify-center mb-6 text-charcoal/20">
+                <div className="w-16 h-16 bg-sand rounded-full flex items-center justify-center mb-6 text-charcoal/80">
                   <Clock className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-charcoal mb-2">Ready to align?</h3>
-                <p className="text-charcoal/40">Enter your wake-up time to generate <br/> your sacred daily schedule.</p>
+                <p className="text-charcoal/80">Enter your wake-up time to generate <br/> your sacred daily schedule.</p>
               </motion.div>
             )}
 
@@ -166,7 +166,7 @@ export default function DinacharyaPage() {
                   >
                     <div className="flex flex-col items-center">
                       <div className="w-14 h-14 rounded-full bg-white border border-charcoal/5 flex flex-col items-center justify-center shadow-sm group-hover:border-clay/30 transition-colors">
-                        <span className="text-[10px] font-bold text-charcoal/30 uppercase leading-none">Time</span>
+                        <span className="text-[10px] font-bold text-charcoal/80 uppercase leading-none">Time</span>
                         <span className="text-[11px] font-black text-charcoal">{ritual.time.split(' ')[0]}</span>
                       </div>
                       <div className="w-0.5 h-full bg-charcoal/5 my-2 group-last:hidden" />
@@ -175,10 +175,10 @@ export default function DinacharyaPage() {
                     <div className="flex-1 bg-white p-6 rounded-3xl border border-charcoal/5 group-hover:shadow-xl group-hover:shadow-charcoal/5 transition-all mb-4">
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="text-lg font-bold text-charcoal group-hover:text-clay transition-colors">{ritual.activity}</h3>
-                        {idx === 0 && <Sunrise className="w-4 h-4 text-turmeric-700" />}
+                        {idx === 0 && <Sunrise className="w-4 h-4 text-turmeric-deep" />}
                         {idx === rituals.length - 1 && <Moon className="w-4 h-4 text-clay" />}
                       </div>
-                      <p className="text-sm text-charcoal/60 leading-relaxed">{ritual.description}</p>
+                      <p className="text-sm text-charcoal/80 leading-relaxed">{ritual.description}</p>
                     </div>
                   </motion.div>
                 ))}

@@ -16,10 +16,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+
 export const metadata: Metadata = {
-  title: "Aaharai | Ancient Wisdom, Modern Health",
-  description: "Reclaim your health with ancient Indian culinary wisdom personalized by AI.",
+  metadataBase: siteUrl ? new URL(siteUrl) : undefined,
+  title: {
+    default: "Aaharai | Ancient Wisdom, Modern Health",
+    template: "%s | Aaharai",
+  },
+  description:
+    "Reclaim your health with ancient Indian culinary wisdom personalized by AI.",
   manifest: "/manifest.json",
+  applicationName: "Aaharai",
+  openGraph: {
+    type: "website",
+    siteName: "Aaharai",
+    title: "Aaharai | Ancient Wisdom, Modern Health",
+    description:
+      "An Ayurvedic AI assistant pairing classical principles with a curated, source-cited atlas of regional Indian food.",
+    url: siteUrl,
+    images: [{ url: "/icon-512.png", width: 512, height: 512, alt: "Aaharai" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Aaharai | Ancient Wisdom, Modern Health",
+    description:
+      "An Ayurvedic AI assistant pairing classical principles with a curated, source-cited atlas of regional Indian food.",
+    images: ["/icon-512.png"],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

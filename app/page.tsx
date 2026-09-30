@@ -62,11 +62,11 @@ export default function Home() {
         {[
           { name: "Satvik Scanner", icon: Zap, color: "text-sage" },
           { name: "Ancient Nuskhe", icon: ShieldCheck, color: "text-clay" },
-          { name: "Dosha Swapper", icon: Heart, color: "text-turmeric-700" },
+          { name: "Dosha Swapper", icon: Heart, color: "text-turmeric-deep" },
         ].map((f) => (
           <div key={f.name} className="flex items-center gap-2 bg-white/50 px-5 py-2.5 rounded-2xl border border-charcoal/5 shadow-sm">
             <f.icon className={`w-4 h-4 ${f.color}`} />
-            <span className="text-sm font-bold text-charcoal/60">{f.name}</span>
+            <span className="text-sm font-bold text-charcoal/80">{f.name}</span>
           </div>
         ))}
       </motion.div>

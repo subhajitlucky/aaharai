@@ -1,11 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-clay: #E07A5F;
-  --color-clay-hover: #D0694E;
+  /* Clay is the brand accent and is used as body text, as a background under
+     white text, and at low opacity as decoration. #E07A5F only reached 2.60:1
+     on sand and 2.95:1 under white text, so it failed WCAG AA in both
+     directions. #A94E36 measures 4.83:1 on sand, 5.48:1 under white, and
+     4.83:1 on the clay/10 tint used behind accent badges. */
+  --color-clay: #A94E36;
+  --color-clay-hover: #8F3F2B;
   --color-turmeric: #F2CC8F;
-  --color-sage: #81B29A;
-  --color-sage-hover: #6F9E87;
+  /* Text-weight turmeric. --color-turmeric alone is 1.34:1 on sand, and there
+     is no `turmeric-700` scale generated from it, so `text-turmeric-700` was a
+     dead class in eight places. Use this for any turmeric-coloured text. */
+  --color-turmeric-deep: #8A5F0F;
+  /* Sage is used for text as well as fills, so it is a text-weight green:
+     4.77:1 on sand and 5.42:1 on white. The previous #81B29A was 2.11:1. */
+  --color-sage: #4A7355;
+  --color-sage-hover: #3D6648;
   --color-sand: #F4F1DE;
   --color-charcoal: #3D405B;
   --color-background: var(--color-sand);

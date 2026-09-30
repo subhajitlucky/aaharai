@@ -93,7 +93,7 @@ export default function ScannerPage() {
     <div className="max-w-4xl mx-auto px-6 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Satvik <span className="text-sage">Scanner</span></h1>
-        <p className="text-lg text-charcoal/60">Snap a photo of your meal to see its Prana Score and Ayurvedic quality.</p>
+        <p className="text-lg text-charcoal/80">Snap a photo of your meal to see its Prana Score and Ayurvedic quality.</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-12">
@@ -116,10 +116,10 @@ export default function ScannerPage() {
             ) : (
               <div className="text-center p-8">
                 <div className="w-16 h-16 bg-sand rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Camera className="w-8 h-8 text-charcoal/40" />
+                  <Camera className="w-8 h-8 text-charcoal/80" />
                 </div>
-                <p className="font-bold text-charcoal/60">Upload or Take Photo</p>
-                <p className="text-sm text-charcoal/40 mt-1">PNG, JPG up to 5MB</p>
+                <p className="font-bold text-charcoal/80">Upload or Take Photo</p>
+                <p className="text-sm text-charcoal/80 mt-1">PNG, JPG up to 5MB</p>
               </div>
             )}
             <input 
@@ -149,10 +149,10 @@ export default function ScannerPage() {
                 animate={{ opacity: 1 }} 
                 className="h-full flex flex-col items-center justify-center text-center p-8 bg-sand/50 rounded-[3rem] border border-charcoal/5"
               >
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 text-charcoal/20">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 text-charcoal/80">
                   <Info className="w-6 h-6" />
                 </div>
-                <p className="text-charcoal/40 font-medium italic">Upload a photo to see the <br/> ancient wisdom within your meal.</p>
+                <p className="text-charcoal/80 font-medium italic">Upload a photo to see the <br/> ancient wisdom within your meal.</p>
               </motion.div>
             )}
 
@@ -167,7 +167,7 @@ export default function ScannerPage() {
                   <Sparkles className="absolute inset-0 m-auto w-8 h-8 text-clay animate-pulse" />
                 </div>
                 <p className="mt-6 font-bold text-charcoal">Analyzing Prana...</p>
-                <p className="text-sm text-charcoal/40 mt-1">Consulting ancient texts & AI</p>
+                <p className="text-sm text-charcoal/80 mt-1">Consulting ancient texts & AI</p>
               </motion.div>
             )}
 
@@ -181,12 +181,12 @@ export default function ScannerPage() {
                 <div className="bg-white p-8 rounded-[2.5rem] shadow-lg border border-charcoal/5 relative overflow-hidden">
                   <div className="flex justify-between items-start mb-6">
                     <div>
-                      <p className="text-xs font-bold text-charcoal/40 uppercase tracking-widest mb-1">Prana Score</p>
+                      <p className="text-xs font-bold text-charcoal/80 uppercase tracking-widest mb-1">Prana Score</p>
                       <h2 className="text-6xl font-black text-charcoal">{analysis.score}</h2>
                     </div>
                     <div className={`px-4 py-2 rounded-full font-bold text-sm uppercase tracking-wider ${
                       analysis.category === 'Satvik' ? 'bg-sage/10 text-sage' : 
-                      analysis.category === 'Rajasic' ? 'bg-turmeric/20 text-turmeric-700' : 
+                      analysis.category === 'Rajasic' ? 'bg-turmeric/20 text-turmeric-deep' : 
                       'bg-clay/10 text-clay'
                     }`}>
                       {analysis.category}
@@ -208,7 +208,7 @@ export default function ScannerPage() {
                   <CheckCircle2 className="w-6 h-6 text-sage shrink-0" />
                   <div>
                     <h3 className="font-bold text-charcoal mb-1">Ancient Insight</h3>
-                    <p className="text-sm text-charcoal/60 leading-relaxed">{analysis.breakdown}</p>
+                    <p className="text-sm text-charcoal/80 leading-relaxed">{analysis.breakdown}</p>
                   </div>
                 </div>
 
@@ -217,7 +217,7 @@ export default function ScannerPage() {
                     <Sparkles className="w-6 h-6 text-clay shrink-0" />
                     <div>
                       <h3 className="font-bold text-charcoal mb-1">Gurukul Advice</h3>
-                      <p className="text-sm text-charcoal/60 leading-relaxed">{analysis.advice}</p>
+                      <p className="text-sm text-charcoal/80 leading-relaxed">{analysis.advice}</p>
                     </div>
                   </div>
 
@@ -251,7 +251,7 @@ export default function ScannerPage() {
                 {/* Ingredients Tags */}
                 <div className="flex flex-wrap gap-2">
                   {analysis.items?.map((item: string) => (
-                    <span key={item} className="px-3 py-1 bg-sand text-charcoal/60 rounded-lg text-xs font-bold uppercase tracking-wider">
+                    <span key={item} className="px-3 py-1 bg-sand text-charcoal/80 rounded-lg text-xs font-bold uppercase tracking-wider">
                       {item}
                     </span>
                   ))}

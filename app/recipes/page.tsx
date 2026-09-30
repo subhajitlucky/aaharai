@@ -12,7 +12,7 @@ import {
 import type { SourcedRecipe } from "@/lib/content/schema";
 
 export const metadata: Metadata = {
-  title: "Source-cited Recipes - Aaharai",
+  title: "Source-cited Recipes",
   description:
     "Regional Indian recipes with explicit source records, normalized ingredients, and clearly marked nutrition estimates.",
 };
@@ -44,7 +44,7 @@ function RecipeCard({ recipe }: { recipe: SourcedRecipe }) {
       >
         <div className="flex items-start justify-between gap-3">
           <TrustBadge trustLabel={recipe.trustLabel} />
-          <span className="mt-1 inline-flex shrink-0 items-center gap-1.5 text-[11px] text-charcoal/45">
+          <span className="mt-1 inline-flex shrink-0 items-center gap-1.5 text-[11px] text-charcoal/80">
             Source record
           </span>
         </div>
@@ -55,7 +55,7 @@ function RecipeCard({ recipe }: { recipe: SourcedRecipe }) {
         >
           {recipe.nativeName.text}
         </p>
-        <p className="mt-2 text-sm text-charcoal/55">
+        <p className="mt-2 text-sm text-charcoal/80">
           {recipe.transliteration ? (
             <>
               <span className="italic" style={{ fontFamily: SERIF_DISPLAY }}>
@@ -73,7 +73,7 @@ function RecipeCard({ recipe }: { recipe: SourcedRecipe }) {
           <h2 className="line-clamp-2 text-[15px] font-semibold leading-snug text-charcoal">
             {recipe.title}
           </h2>
-          <p className="mt-2 flex items-center gap-1.5 text-sm text-charcoal/60">
+          <p className="mt-2 flex items-center gap-1.5 text-sm text-charcoal/80">
             <MapPin className="h-3.5 w-3.5 shrink-0" aria-hidden />
             <span className="truncate">
               {recipe.region.state}
@@ -82,7 +82,7 @@ function RecipeCard({ recipe }: { recipe: SourcedRecipe }) {
           </p>
         </div>
 
-        <div className="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-6 text-xs text-charcoal/55">
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-6 text-xs text-charcoal/80">
           <span className="inline-flex items-center gap-1.5">
             <Clock className="h-3.5 w-3.5" aria-hidden />
             {formatMinutes(totalTimeMinutes(recipe))}
@@ -122,12 +122,12 @@ export function RecipesIndexContent({ recipes }: { recipes: SourcedRecipe[] }) {
             >
               {recipes.length}
             </p>
-            <p className="mt-1.5 text-[11px] uppercase tracking-[0.25em] text-charcoal/50">
+            <p className="mt-1.5 text-[11px] uppercase tracking-[0.25em] text-charcoal/80">
               source-cited records
             </p>
           </div>
         </div>
-        <p className="mt-5 max-w-2xl leading-relaxed text-charcoal/60">
+        <p className="mt-5 max-w-2xl leading-relaxed text-charcoal/80">
           Each public recipe names its source record, ingredient form, adaptation boundary, and nutrition source. A source-cited label is not a claim of community testing or laboratory measurement.
         </p>
         <div aria-hidden className="mt-9">
@@ -139,14 +139,14 @@ export function RecipesIndexContent({ recipes }: { recipes: SourcedRecipe[] }) {
       {recipes.length === 0 ? (
         <div className="mx-auto max-w-6xl px-6">
           <div className="rounded-2xl border border-dashed border-charcoal/20 bg-charcoal/[0.02] px-8 py-16 text-center">
-            <ChefHat className="mx-auto h-10 w-10 text-charcoal/30" aria-hidden />
+            <ChefHat className="mx-auto h-10 w-10 text-charcoal/80" aria-hidden />
             <h2
               className="mt-4 text-xl text-charcoal"
               style={{ fontFamily: SERIF_DISPLAY }}
             >
               No verified recipes yet
             </h2>
-            <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-charcoal/55">
+            <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-charcoal/80">
               The first source-cited record is still being transcribed. Check back soon — nothing unverified ever appears here.
             </p>
           </div>

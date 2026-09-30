@@ -79,7 +79,7 @@ export default function SwapperPage() {
         <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">
           Junk to <span className="text-clay">Jewel</span>
         </h1>
-        <p className="text-lg text-charcoal/70 mb-10">
+        <p className="text-lg text-charcoal/80 mb-10">
           Tell us what you crave. We’ll tell you what to eat <br/>
           to satisfy the soul, not just the tongue.
         </p>
@@ -87,14 +87,14 @@ export default function SwapperPage() {
         {/* Search Bar */}
         <form onSubmit={handleSwap} className="relative w-full max-w-lg mx-auto mb-12 group">
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-            <Search className="h-5 w-5 text-charcoal/40 group-focus-within:text-clay transition-colors" />
+            <Search className="h-5 w-5 text-charcoal/80 group-focus-within:text-clay transition-colors" />
           </div>
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="I am craving... (e.g. Pizza, Maggi, Coke)"
-            className="w-full pl-12 pr-4 py-4 rounded-full bg-white border-2 border-transparent shadow-lg shadow-charcoal/5 focus:outline-none focus:border-clay/50 focus:shadow-xl transition-all text-lg placeholder:text-charcoal/30 text-charcoal"
+            className="w-full pl-12 pr-4 py-4 rounded-full bg-white border-2 border-transparent shadow-lg shadow-charcoal/5 focus:outline-none focus:border-clay/50 focus:shadow-xl transition-all text-lg placeholder:text-charcoal/80 text-charcoal"
           />
           <button 
             type="submit" 
@@ -153,7 +153,7 @@ export default function SwapperPage() {
               <div className="mt-8 text-center border-t border-charcoal/5 pt-6">
                  <button 
                   onClick={saveToLibrary}
-                  className="text-sm font-bold text-charcoal/40 hover:text-clay flex items-center justify-center gap-2 mx-auto transition-colors"
+                  className="text-sm font-bold text-charcoal/80 hover:text-clay flex items-center justify-center gap-2 mx-auto transition-colors"
                  >
                    {isSaved ? (
                      <span className="flex items-center gap-2 text-sage"><CheckCircle2 className="w-4 h-4" /> Added to Jewels</span>

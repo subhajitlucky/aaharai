@@ -71,7 +71,7 @@ export default function Navbar() {
       "flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium transition-colors",
       active
         ? "bg-clay/10 text-clay"
-        : "text-charcoal/70 hover:bg-charcoal/5 hover:text-charcoal",
+        : "text-charcoal/80 hover:bg-charcoal/5 hover:text-charcoal",
     );
 
   return (
@@ -136,7 +136,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => signOut()}
-                  className="hidden items-center gap-2 rounded-full px-2 py-2 text-sm font-medium text-charcoal/60 transition-colors hover:text-clay sm:flex"
+                  className="hidden items-center gap-2 rounded-full px-2 py-2 text-sm font-medium text-charcoal/80 transition-colors hover:text-clay sm:flex"
                 >
                   <LogOut className="h-4 w-4" aria-hidden />
                   Sign Out
@@ -151,7 +151,7 @@ export default function Navbar() {
                       className="h-full w-full rounded-full object-cover"
                     />
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-sand text-charcoal/40">
+                    <div className="flex h-full w-full items-center justify-center bg-sand text-charcoal/80">
                       <User className="h-5 w-5" aria-hidden />
                     </div>
                   )}
@@ -176,7 +176,7 @@ export default function Navbar() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="flex h-10 w-10 items-center justify-center rounded-full text-charcoal/70 transition-colors hover:bg-charcoal/5 xl:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-charcoal/80 transition-colors hover:bg-charcoal/5 xl:hidden"
             >
               {open ? (
                 <X className="h-5 w-5" aria-hidden />

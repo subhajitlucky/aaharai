@@ -36,7 +36,7 @@ export default function SciencePage() {
           <span>Evidence Based Wisdom</span>
         </motion.div>
         <h1 className="text-5xl md:text-7xl font-bold text-charcoal mb-6">Ancient Wisdom, <br/> <span className="text-clay">Proven Science.</span></h1>
-        <p className="text-xl text-charcoal/60 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl text-charcoal/80 max-w-2xl mx-auto leading-relaxed">
           Aaharai isn’t just about tradition. It’s about reconnecting with the biological laws that governed human health for millennia.
         </p>
       </div>
@@ -55,7 +55,7 @@ export default function SciencePage() {
               <p.icon className="w-6 h-6" />
             </div>
             <h3 className="text-2xl font-bold text-charcoal mb-4">{p.title}</h3>
-            <p className="text-charcoal/60 leading-relaxed">{p.desc}</p>
+            <p className="text-charcoal/80 leading-relaxed">{p.desc}</p>
           </motion.div>
         ))}
       </div>

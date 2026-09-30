@@ -245,7 +245,7 @@ export default function PrakritiTest() {
             animate={{ opacity: 1, scale: 1 }}
             className="glass-panel p-10 rounded-3xl text-center shadow-xl shadow-charcoal/5 border-t-8 border-clay"
           >
-            <p className="text-charcoal/60 mb-4 text-lg">Your dominant energy is</p>
+            <p className="text-charcoal/80 mb-4 text-lg">Your dominant energy is</p>
             <h2 className="text-6xl font-bold text-clay mb-6">{result}</h2>
             
             <p className="text-xl text-charcoal/80 mb-8 leading-relaxed">
@@ -308,7 +308,7 @@ export default function PrakritiTest() {
                     </div>
                     <h4 className="text-xl font-semibold text-clay mb-1">{mealPlan[meal]?.name}</h4>
                     <p className="text-charcoal/80 mb-2">{mealPlan[meal]?.description}</p>
-                    <p className="text-sm text-charcoal/60 italic">✨ {mealPlan[meal]?.benefits}</p>
+                    <p className="text-sm text-charcoal/80 italic">✨ {mealPlan[meal]?.benefits}</p>
                   </div>
                 ))}
 

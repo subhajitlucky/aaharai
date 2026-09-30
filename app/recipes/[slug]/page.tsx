@@ -40,10 +40,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const recipe = getRecipeBySlug(slug);
-  if (!recipe) return { title: "Recipe not found - Aaharai" };
+  if (!recipe) return { title: "Recipe not found" };
 
   return {
-    title: `${recipe.title} - Aaharai`,
+    title: recipe.title,
     description: `${recipe.title} from ${recipe.region.state}, with explicit source and review records and recomputed nutrition estimates.`,
   };
 }
@@ -66,7 +66,7 @@ function SectionHeading({ kicker, title }: { kicker: string; title: string }) {
 
 function Chip({ children }: { children: ReactNode }) {
   return (
-    <span className="rounded-full border border-charcoal/15 px-3 py-1 text-xs text-charcoal/70">
+    <span className="rounded-full border border-charcoal/15 px-3 py-1 text-xs text-charcoal/80">
       {children}
     </span>
   );
@@ -84,7 +84,7 @@ function ProvenancePanel({ recipe }: { recipe: LoadedRecipe }) {
           <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-clay">
             Source and review record
           </p>
-          <p className="inline-flex items-center gap-1.5 text-xs font-medium text-charcoal/60">
+          <p className="inline-flex items-center gap-1.5 text-xs font-medium text-charcoal/80">
             <BadgeCheck className="h-4 w-4" aria-hidden />
             {TRUST_LABELS[recipe.trustLabel]}
           </p>
@@ -103,11 +103,11 @@ function ProvenancePanel({ recipe }: { recipe: LoadedRecipe }) {
                 >
                   {entry.name}
                 </span>
-                <span className="flex-1 text-sm text-charcoal/60">
+                <span className="flex-1 text-sm text-charcoal/80">
                   {[entry.relation, entry.place].filter(Boolean).join(" · ") || "—"}
                 </span>
                 {entry.era ? (
-                  <span className="font-mono text-xs uppercase tracking-wider text-charcoal/50">
+                  <span className="font-mono text-xs uppercase tracking-wider text-charcoal/80">
                     {entry.era}
                   </span>
                 ) : null}
@@ -118,13 +118,13 @@ function ProvenancePanel({ recipe }: { recipe: LoadedRecipe }) {
 
         {lineage?.publishedRef ? (
           <div className="px-5 py-3.5 sm:px-7">
-            <p className="text-sm italic text-charcoal/60">
+            <p className="text-sm italic text-charcoal/80">
               Published reference: {lineage.publishedRef}
             </p>
           </div>
         ) : null}
 
-        <div className="grid gap-4 px-5 py-4 text-sm text-charcoal/70 sm:grid-cols-2 sm:px-7">
+        <div className="grid gap-4 px-5 py-4 text-sm text-charcoal/80 sm:grid-cols-2 sm:px-7">
           <p>
             <span className="font-semibold text-charcoal">Review record:</span>{" "}
             {verification.verifierName}
@@ -144,7 +144,7 @@ function ProvenancePanel({ recipe }: { recipe: LoadedRecipe }) {
         </div>
 
         {recipe.trustLabel === "community-tested" ? (
-          <div className="px-5 py-4 text-sm text-charcoal/70 sm:px-7">
+          <div className="px-5 py-4 text-sm text-charcoal/80 sm:px-7">
             <p className="font-semibold text-charcoal">Community testing evidence:</p>
             <p className="mt-1">
               {recipe.communityTestingEvidence.method} · {recipe.communityTestingEvidence.participants} · recorded {recipe.communityTestingEvidence.recordedAt}
@@ -160,12 +160,12 @@ function NutritionPanel({ recipe }: { recipe: LoadedRecipe }) {
   return (
     <section aria-label="Nutrition" className="mx-auto mt-14 max-w-4xl border-t border-charcoal/10 px-6 pt-12">
       <SectionHeading kicker="Composition" title="Nutrition" />
-      <p className="-mt-4 mb-6 text-sm leading-relaxed text-charcoal/60">
+      <p className="-mt-4 mb-6 text-sm leading-relaxed text-charcoal/80">
         Values are per serving and retain their source and estimate status. They are not medical advice.
       </p>
       <div className="overflow-x-auto rounded-xl border border-charcoal/10">
         <table className="w-full min-w-[34rem] text-left text-sm">
-          <thead className="bg-charcoal/[0.05] text-xs uppercase tracking-wider text-charcoal/50">
+          <thead className="bg-charcoal/[0.05] text-xs uppercase tracking-wider text-charcoal/80">
             <tr>
               <th scope="col" className="px-4 py-3 font-semibold">Nutrient</th>
               <th scope="col" className="px-4 py-3 font-semibold">Amount</th>
@@ -179,17 +179,17 @@ function NutritionPanel({ recipe }: { recipe: LoadedRecipe }) {
                 <th scope="row" className="px-4 py-3 text-left font-medium capitalize text-charcoal">
                   {value.nutrient}
                 </th>
-                <td className="px-4 py-3 text-charcoal/75">
+                <td className="px-4 py-3 text-charcoal/80">
                   {value.amount} {value.unit}
                 </td>
-                <td className="px-4 py-3 font-mono text-xs text-charcoal/60">{value.sourceId}</td>
-                <td className="px-4 py-3 text-charcoal/60">{value.estimated ? "Estimated" : "Cited"}</td>
+                <td className="px-4 py-3 font-mono text-xs text-charcoal/80">{value.sourceId}</td>
+                <td className="px-4 py-3 text-charcoal/80">{value.estimated ? "Estimated" : "Cited"}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p className="mt-3 text-xs text-charcoal/50">Serving: {recipe.nutrition.servingLabel}</p>
+      <p className="mt-3 text-xs text-charcoal/80">Serving: {recipe.nutrition.servingLabel}</p>
     </section>
   );
 }
@@ -234,7 +234,7 @@ export default async function RecipeDetailPage({
           </h1>
 
           {(recipe.transliteration || recipe.dialectVariant) && (
-            <p className="mt-4 text-lg text-charcoal/70">
+            <p className="mt-4 text-lg text-charcoal/80">
               {recipe.transliteration && (
                 <span className="italic" style={{ fontFamily: SERIF_DISPLAY }}>
                   {recipe.transliteration}
@@ -244,18 +244,18 @@ export default async function RecipeDetailPage({
                 <span aria-hidden> · </span>
               )}
               {recipe.dialectVariant && (
-                <span className="text-base text-charcoal/50">
+                <span className="text-base text-charcoal/80">
                   {recipe.dialectVariant}
                 </span>
               )}
             </p>
           )}
 
-          <p className="mx-auto mt-4 max-w-xl text-xs uppercase leading-relaxed tracking-[0.18em] text-charcoal/50">
+          <p className="mx-auto mt-4 max-w-xl text-xs uppercase leading-relaxed tracking-[0.18em] text-charcoal/80">
             {recipe.title}
           </p>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-charcoal/60">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-charcoal/80">
             <span className="inline-flex items-center gap-1.5">
               <Clock className="h-4 w-4" aria-hidden />
               {formatMinutes(totalMinutes)} total
@@ -292,12 +292,12 @@ export default async function RecipeDetailPage({
                 />
                 <span
                   aria-hidden
-                  className="absolute inset-0 flex select-none items-center justify-center text-[7rem] leading-none text-charcoal/75 md:text-[9rem]"
+                  className="absolute inset-0 flex select-none items-center justify-center text-[7rem] leading-none text-charcoal/80 md:text-[9rem]"
                   style={{ fontFamily: SERIF_DISPLAY }}
                 >
                   {initial}
                 </span>
-                <span className="absolute bottom-3 right-4 text-[10px] uppercase tracking-[0.3em] text-charcoal/60">
+                <span className="absolute bottom-3 right-4 text-[10px] uppercase tracking-[0.3em] text-charcoal/80">
                   Aaharai Archive
                 </span>
               </>
@@ -312,7 +312,7 @@ export default async function RecipeDetailPage({
 
       <section aria-label="When it is served" className="mx-auto max-w-4xl px-6 pt-12">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="mr-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-charcoal/45">
+          <span className="mr-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-charcoal/80">
             Served at
           </span>
           {recipe.occasions.map((occasion) => (
@@ -333,7 +333,7 @@ export default async function RecipeDetailPage({
       <section aria-label="Ingredients" className="mx-auto mt-14 max-w-4xl border-t border-charcoal/10 px-6 pt-12">
         <SectionHeading kicker="The List" title="Ingredients" />
         {recipe.languageNote && (
-          <p className="-mt-4 mb-7 text-sm italic text-charcoal/55">
+          <p className="-mt-4 mb-7 text-sm italic text-charcoal/80">
             On language: {recipe.languageNote}
           </p>
         )}
@@ -343,13 +343,13 @@ export default async function RecipeDetailPage({
               key={`${ingredient.ingredientId}-${index}`}
               className="flex items-baseline gap-3 border-b border-dotted border-charcoal/15 pb-3"
             >
-              <span className="w-20 shrink-0 font-mono text-sm text-charcoal/70">
+              <span className="w-20 shrink-0 font-mono text-sm text-charcoal/80">
                 {ingredient.quantity} {ingredient.unit}
               </span>
               <span className="text-[15px] text-charcoal">
                 <span className="font-mono text-sm">{ingredient.ingredientId}</span>
                 {ingredient.note && (
-                  <span className="block text-sm leading-snug text-charcoal/55">
+                  <span className="block text-sm leading-snug text-charcoal/80">
                     {ingredient.note}
                   </span>
                 )}
@@ -357,7 +357,7 @@ export default async function RecipeDetailPage({
             </li>
           ))}
         </ul>
-        <p className="mt-5 text-xs text-charcoal/50">
+        <p className="mt-5 text-xs text-charcoal/80">
           Allergens: {recipe.allergenIds.length > 0 ? recipe.allergenIds.map((allergen) => typeof allergen === "string" ? allergen : allergen.label).join(", ") : "none declared"}
         </p>
       </section>
@@ -377,12 +377,12 @@ export default async function RecipeDetailPage({
               <div>
                 <p className="leading-relaxed text-charcoal/85">{step.text}</p>
                 {step.technique && (
-                  <span className="mt-2.5 inline-block rounded-full border border-charcoal/10 bg-charcoal/[0.05] px-2.5 py-1 font-mono text-[11px] uppercase tracking-widest text-charcoal/60">
+                  <span className="mt-2.5 inline-block rounded-full border border-charcoal/10 bg-charcoal/[0.05] px-2.5 py-1 font-mono text-[11px] uppercase tracking-widest text-charcoal/80">
                     Technique · {step.technique}
                   </span>
                 )}
                 {step.tip && (
-                  <p className="mt-2.5 border-l-2 border-sage/50 pl-3 text-sm italic leading-relaxed text-charcoal/65">
+                  <p className="mt-2.5 border-l-2 border-sage/50 pl-3 text-sm italic leading-relaxed text-charcoal/80">
                     Tip — {step.tip}
                   </p>
                 )}
@@ -407,7 +407,7 @@ export default async function RecipeDetailPage({
                 >
                   {variation.label}
                 </p>
-                <p className="mt-1.5 text-sm leading-relaxed text-charcoal/65">
+                <p className="mt-1.5 text-sm leading-relaxed text-charcoal/80">
                   {variation.note}
                 </p>
               </li>
@@ -424,7 +424,7 @@ export default async function RecipeDetailPage({
           <ul className="flex flex-wrap gap-2">
             {recipe.substitutionIds.map((id) => (
               <li key={id}>
-                <code className="rounded-full border border-charcoal/15 px-3 py-1 text-xs text-charcoal/65">
+                <code className="rounded-full border border-charcoal/15 px-3 py-1 text-xs text-charcoal/80">
                   {id}
                 </code>
               </li>
@@ -453,7 +453,7 @@ export default async function RecipeDetailPage({
       {bodyParagraphs.length > 0 && (
         <section aria-label="Family notes" className="mx-auto mt-14 max-w-3xl border-t border-charcoal/10 px-6 pt-12">
           <SectionHeading kicker="Family Notes" title="From the keeper of this recipe" />
-          <div className="space-y-5 leading-relaxed text-charcoal/75">
+          <div className="space-y-5 leading-relaxed text-charcoal/80">
             {bodyParagraphs.map((paragraph, index) =>
               index === 0 ? (
                 <p
@@ -475,12 +475,12 @@ export default async function RecipeDetailPage({
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link
             href="/recipes"
-            className="inline-flex items-center gap-2 text-sm font-medium text-charcoal/60 transition-colors hover:text-clay"
+            className="inline-flex items-center gap-2 text-sm font-medium text-charcoal/80 transition-colors hover:text-clay"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden />
             All source-cited recipes
           </Link>
-          <p className="text-[10px] uppercase tracking-[0.3em] text-charcoal/40">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-charcoal/80">
             Source-cited records
           </p>
         </div>
