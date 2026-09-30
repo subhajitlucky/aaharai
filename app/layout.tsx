@@ -31,7 +31,10 @@ export default function RootLayout({
       <body className="antialiased min-h-screen flex flex-col selection:bg-clay selection:text-white bg-sand text-charcoal">
         <Providers>
           <Navbar />
-          <main id="main-content" className="flex-1 pt-24">
+          {/* overflow-x-clip (not hidden) contains transient horizontal
+              overflow from slide-in animations without creating a scroll
+              container, which would break position: sticky. */}
+          <main id="main-content" className="flex-1 overflow-x-clip pt-24">
             {children}
           </main>
         </Providers>

@@ -163,20 +163,22 @@ function NutritionPanel({ recipe }: { recipe: LoadedRecipe }) {
       <p className="-mt-4 mb-6 text-sm leading-relaxed text-charcoal/60">
         Values are per serving and retain their source and estimate status. They are not medical advice.
       </p>
-      <div className="overflow-hidden rounded-xl border border-charcoal/10">
-        <table className="w-full text-left text-sm">
+      <div className="overflow-x-auto rounded-xl border border-charcoal/10">
+        <table className="w-full min-w-[34rem] text-left text-sm">
           <thead className="bg-charcoal/[0.05] text-xs uppercase tracking-wider text-charcoal/50">
             <tr>
-              <th className="px-4 py-3 font-semibold">Nutrient</th>
-              <th className="px-4 py-3 font-semibold">Amount</th>
-              <th className="px-4 py-3 font-semibold">Source</th>
-              <th className="px-4 py-3 font-semibold">Status</th>
+              <th scope="col" className="px-4 py-3 font-semibold">Nutrient</th>
+              <th scope="col" className="px-4 py-3 font-semibold">Amount</th>
+              <th scope="col" className="px-4 py-3 font-semibold">Source</th>
+              <th scope="col" className="px-4 py-3 font-semibold">Status</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-charcoal/10">
             {recipe.nutrition.values.map((value) => (
               <tr key={`${value.nutrient}-${value.unit}`}>
-                <td className="px-4 py-3 capitalize text-charcoal">{value.nutrient}</td>
+                <th scope="row" className="px-4 py-3 text-left font-medium capitalize text-charcoal">
+                  {value.nutrient}
+                </th>
                 <td className="px-4 py-3 text-charcoal/75">
                   {value.amount} {value.unit}
                 </td>

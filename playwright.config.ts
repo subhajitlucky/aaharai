@@ -19,6 +19,13 @@ export default defineConfig({
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
     },
+    // A phone profile is required, not optional: the desktop link row is only
+    // rendered from xl (1280px) up, so Desktop Chrome alone would skip every
+    // mobile navigation assertion.
+    {
+      name: "mobile",
+      use: { ...devices["Pixel 5"] },
+    },
   ],
   webServer: {
     // CI runs against the production build (npm run build) so the suite
