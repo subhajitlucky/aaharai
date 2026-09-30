@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Leaf, ArrowRight, Sparkles, ShieldCheck, Zap, Heart } from "lucide-react";
+import { ArrowRight, Sparkles, ShieldCheck, Zap, Heart } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -69,19 +69,6 @@ export default function Home() {
             <span className="text-sm font-bold text-charcoal/60">{f.name}</span>
           </div>
         ))}
-      </motion.div>
-
-      {/* Footer / Trust Badge */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 1 }}
-        className="absolute bottom-8 text-center text-sm text-charcoal/40"
-      >
-        <p className="flex items-center gap-2">
-          <Leaf className="w-4 h-4" />
-          <span>Built for the 21-Day Satvik Challenge</span>
-        </p>
       </motion.div>
 
     </div>

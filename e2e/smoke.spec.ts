@@ -13,10 +13,29 @@ test.describe("public pages", () => {
   test("homepage renders the hero and primary calls to action", async ({ page }) => {
     await page.goto("/");
 
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Aaharai");
-    await expect(page.getByText("Ayurvedic AI Assistant")).toBeVisible();
-    await expect(page.getByRole("link", { name: /Find My Body Type/i })).toBeVisible();
-    await expect(page.getByRole("link", { name: /Enter Dashboard/i })).toBeVisible();
+    // Scoped to <main> because the footer tagline also mentions the assistant.
+    const main = page.locator("main");
+    await expect(
+      main.getByRole("heading", { level: 1 }),
+    ).toContainText("Aaharai");
+    await expect(
+      main.getByText("India’s First Ayurvedic AI Assistant"),
+    ).toBeVisible();
+    await expect(main.getByRole("link", { name: /Find My Body Type/i })).toBeVisible();
+    await expect(main.getByRole("link", { name: /Enter Dashboard/i })).toBeVisible();
+  });
+
+  test("every page carries the global footer with its wellness notice", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const footer = page.locator("body > footer");
+    await expect(footer).toHaveCount(1);
+    await expect(footer).toContainText("General wellness guidance");
+    await expect(footer).toContainText("not medical advice");
+    // Must be reachable by scrolling, not parked off-screen.
+    await footer.scrollIntoViewIfNeeded();
+    await expect(footer).toBeInViewport();
   });
 
   test("recipes index lists source-cited records", async ({ page }) => {
