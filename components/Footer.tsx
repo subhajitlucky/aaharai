@@ -3,16 +3,18 @@ import { Leaf } from "lucide-react";
 
 const explore = [
   { name: "Recipes", href: "/recipes" },
+  { name: "Seasonal Calendar", href: "/seasonal" },
   { name: "Prakriti Quiz", href: "/prakriti-test" },
   { name: "Daily Rituals", href: "/dinacharya" },
   { name: "Satvik Scanner", href: "/scanner" },
 ];
 
 const learn = [
+  { name: "Sources & Policy", href: "/sources" },
   { name: "Ancient Library", href: "/library" },
   { name: "The Science", href: "/science" },
-  { name: "Junk Swapper", href: "/swapper" },
   { name: "Remedies", href: "/nuskhe" },
+  { name: "Junk Swapper", href: "/swapper" },
 ];
 
 export default function Footer() {

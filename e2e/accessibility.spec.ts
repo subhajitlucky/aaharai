@@ -22,6 +22,8 @@ const PAGES = [
   "/swapper",
   "/dashboard",
   "/prakriti-test",
+  "/sources",
+  "/seasonal",
 ];
 
 /** Runs in the page: resolves computed colours and returns failing nodes. */

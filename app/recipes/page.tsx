@@ -130,6 +130,20 @@ export function RecipesIndexContent({ recipes }: { recipes: SourcedRecipe[] }) {
         <p className="mt-5 max-w-2xl leading-relaxed text-charcoal/80">
           Each public recipe names its source record, ingredient form, adaptation boundary, and nutrition source. A source-cited label is not a claim of community testing or laboratory measurement.
         </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link
+            href="/sources"
+            className="inline-flex items-center gap-2 rounded-full border border-clay/50 bg-clay/10 px-4 py-2 text-sm font-medium text-charcoal transition-colors hover:bg-clay/20"
+          >
+            How these records are sourced
+          </Link>
+          <Link
+            href="/seasonal"
+            className="inline-flex items-center gap-2 rounded-full border border-charcoal/15 bg-white/40 px-4 py-2 text-sm font-medium text-charcoal transition-colors hover:border-clay/50"
+          >
+            Seasonal calendar
+          </Link>
+        </div>
         <div aria-hidden className="mt-9">
           <div className="border-t-2 border-charcoal/70" />
           <div className="mt-1 border-t border-charcoal/20" />
@@ -160,7 +174,72 @@ export function RecipesIndexContent({ recipes }: { recipes: SourcedRecipe[] }) {
           </div>
         </div>
       )}
+      <Coverage recipes={recipes} />
     </div>
+  );
+}
+
+/**
+ * Regional coverage, computed from the records themselves. The gaps are shown
+ * as plainly as the coverage: an atlas that only displays what it has is not
+ * an accurate picture of the country's food.
+ */
+function Coverage({ recipes }: { recipes: SourcedRecipe[] }) {
+  const byState = new Map<string, number>();
+  for (const recipe of recipes) {
+    const state = recipe.region.state;
+    byState.set(state, (byState.get(state) ?? 0) + 1);
+  }
+  const states = [...byState.entries()].sort((a, b) =>
+    a[0].localeCompare(b[0]),
+  );
+
+  return (
+    <section
+      aria-labelledby="coverage"
+      className="mx-auto mt-20 max-w-6xl px-6"
+    >
+      <div className="border-t-2 border-charcoal/70 pt-10">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-clay">
+          Coverage
+        </p>
+        <h2
+          id="coverage"
+          className="mt-3 max-w-2xl text-3xl leading-tight text-charcoal"
+          style={{ fontFamily: SERIF_DISPLAY }}
+        >
+          Where the archive has records today.
+        </h2>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-charcoal/80">
+          This is every state and union territory currently represented in the
+          archive, counted from the records themselves. It is a small and
+          deliberately incomplete map: most of India&rsquo;s regional cooking has
+          no source-cited record here yet. A dish is only added once a source
+          for it can be cited, which is slower than copying a recipe blog and
+          much harder to fake.
+        </p>
+
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {states.map(([state, count]) => (
+            <li
+              key={state}
+              className="flex items-center justify-between gap-4 rounded-xl border border-charcoal/10 bg-charcoal/[0.03] px-4 py-3"
+            >
+              <span className="text-[15px] font-medium text-charcoal">{state}</span>
+              <span className="text-sm text-charcoal/80">
+                {count} {count === 1 ? "record" : "records"}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-6 text-xs leading-relaxed text-charcoal/80">
+          States with no record yet are simply absent. Listing them as
+          &ldquo;coming soon&rdquo; would be a promise the archive cannot keep on
+          a citation-first basis.
+        </p>
+      </div>
+    </section>
   );
 }
 

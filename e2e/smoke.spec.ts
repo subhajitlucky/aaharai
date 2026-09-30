@@ -38,6 +38,38 @@ test.describe("public pages", () => {
     await expect(footer).toBeInViewport();
   });
 
+  test("the sources page states the editorial policy and the registry", async ({
+    page,
+  }) => {
+    await page.goto("/sources");
+    const main = page.locator("main");
+    await expect(main.getByRole("heading", { level: 1 })).toContainText(
+      "Where every claim comes from",
+    );
+    // Every registered source must be listed, with its rights and boundary.
+    await expect(main.getByText("Usage boundary").first()).toBeVisible();
+    await expect(main.getByText("What AI cannot do here")).toBeVisible();
+    await expect(main.getByRole("link", { name: "licence" }).first()).toBeVisible();
+  });
+
+  test("the seasonal calendar is generated from the records", async ({ page }) => {
+    await page.goto("/seasonal");
+    const main = page.locator("main");
+    await expect(main.getByRole("heading", { level: 1 })).toContainText(
+      "month by month",
+    );
+    await expect(main.getByText("January")).toBeVisible();
+    await expect(main.getByText("Available through the year")).toBeVisible();
+  });
+
+  test("the archive reports its own regional coverage", async ({ page }) => {
+    await page.goto("/recipes");
+    await expect(
+      page.getByRole("heading", { name: /Where the archive has records today/ }),
+    ).toBeVisible();
+    await expect(page.getByRole("link", { name: /How these records are sourced/ })).toBeVisible();
+  });
+
   test("recipes index lists source-cited records", async ({ page }) => {
     await page.goto("/recipes");
 
@@ -73,6 +105,8 @@ test.describe("top-level navigation", () => {
     "/science",
     "/scanner",
     "/swapper",
+    "/sources",
+    "/seasonal",
   ] as const;
 
   for (const route of routes) {
